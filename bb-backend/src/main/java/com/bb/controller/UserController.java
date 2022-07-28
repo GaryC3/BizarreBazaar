@@ -1,5 +1,0 @@
-package com.bb.controller;
-
-public class UserController {
-
-}
