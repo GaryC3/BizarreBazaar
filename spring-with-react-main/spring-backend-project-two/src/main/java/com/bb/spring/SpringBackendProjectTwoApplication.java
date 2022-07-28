@@ -1,12 +1,12 @@
-package com.skillstorm.spring;
+package com.bb.spring;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.skillstorm.spring.models.User;
-import com.skillstorm.spring.repositories.UserRepository;
+import com.bb.spring.beans.User;
+import com.bb.spring.repositories.UserRepository;
 
 @SpringBootApplication
 public class SpringBackendProjectTwoApplication implements CommandLineRunner {

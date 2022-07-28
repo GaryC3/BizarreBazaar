@@ -1,4 +1,4 @@
-package com.skillstorm.spring.controllers;
+package com.bb.spring.controllers;
 
 import java.util.List;
 
@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.skillstorm.spring.models.User;
-import com.skillstorm.spring.repositories.UserRepository;
+import com.bb.spring.beans.User;
+import com.bb.spring.repositories.UserRepository;
 
 @CrossOrigin(origins = "http://localhost:3000/")
 @RestController

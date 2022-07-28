@@ -1,4 +1,4 @@
-package com.skillstorm.spring.models;
+package com.bb.spring.beans;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
