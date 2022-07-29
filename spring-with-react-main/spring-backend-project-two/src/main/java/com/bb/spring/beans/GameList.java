@@ -1,11 +1,18 @@
 package com.bb.spring.beans;
 
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name="GameList")
@@ -30,7 +37,15 @@ public class GameList {
 	
 	@Column(name="Inventory")
 	private int inventory;
-
+	
+	@ManyToOne // DO NOT use Eager unless you 100% ALWAYS need the child record
+	@JoinColumn(name = "Genre")
+	private Discount discount;
+	
+	@OneToMany(mappedBy = "game")
+	@JsonIgnore
+	private Set<Invoice> invoices;
+	
 	public GameList() {
 		super();
 	}
@@ -92,11 +107,28 @@ public class GameList {
 	public void setInventory(int inventory) {
 		this.inventory = inventory;
 	}
+	
+
+	public Discount getDiscount() {
+		return discount;
+	}
+
+	public void setDiscount(Discount discount) {
+		this.discount = discount;
+	}
+
+	public Set<Invoice> getInvoices() {
+		return invoices;
+	}
+
+	public void setInvoices(Set<Invoice> invoices) {
+		this.invoices = invoices;
+	}
 
 	@Override
 	public String toString() {
 		return "GameList [gameid=" + gameid + ", title=" + title + ", genre=" + genre + ", description=" + description
-				+ ", price=" + price + ", inventory=" + inventory + "]";
+				+ ", price=" + price + ", inventory=" + inventory + ", discount=" + discount + "]";
 	}
 	
 	

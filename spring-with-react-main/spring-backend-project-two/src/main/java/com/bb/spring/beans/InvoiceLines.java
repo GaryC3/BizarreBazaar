@@ -1,11 +1,9 @@
 package com.bb.spring.beans;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -28,7 +26,15 @@ public class InvoiceLines {
 	
 	@Column(name="Price")
 	private double price;
+	
+	@ManyToOne // DO NOT use Eager unless you 100% ALWAYS need the child record
+	@JoinColumn(name = "Invoice_Id")
+	private Invoice invoice;
 
+	@ManyToOne // DO NOT use Eager unless you 100% ALWAYS need the child record
+	@JoinColumn(name = "id")
+	private UserList userList;
+	
 	public InvoiceLines() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -82,11 +88,28 @@ public class InvoiceLines {
 	public void setPrice(double price) {
 		this.price = price;
 	}
+	
+
+	public Invoice getInvoice() {
+		return invoice;
+	}
+
+	public void setInvoice(Invoice invoice) {
+		this.invoice = invoice;
+	}
+
+	public UserList getUserList() {
+		return userList;
+	}
+
+	public void setUserList(UserList userList) {
+		this.userList = userList;
+	}
 
 	@Override
 	public String toString() {
 		return "InvoiceLines [user_id=" + user_id + ", line_id=" + line_id + ", invoice_id=" + invoice_id + ", title="
-				+ title + ", price=" + price + "]";
+				+ title + ", price=" + price + ", invoice=" + invoice + ", userList=" + userList + "]";
 	}
 	
 	

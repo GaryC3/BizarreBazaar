@@ -1,11 +1,16 @@
 package com.bb.spring.beans;
 
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name="UserList")
@@ -24,7 +29,11 @@ public class UserList {
 	
 	@Column(name="email")
 	private String email;
-
+	
+	@OneToMany(mappedBy = "userList")
+	@JsonIgnore
+	private Set<InvoiceLines> invoiceLines;
+	
 	public UserList() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -68,6 +77,15 @@ public class UserList {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	
+
+	public Set<InvoiceLines> getInvoiceLines() {
+		return invoiceLines;
+	}
+
+	public void setInvoiceLines(Set<InvoiceLines> invoiceLines) {
+		this.invoiceLines = invoiceLines;
 	}
 
 	@Override

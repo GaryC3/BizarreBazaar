@@ -1,9 +1,14 @@
 package com.bb.spring.beans;
 
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name="Discount")
@@ -16,6 +21,10 @@ public class Discount {
 	@Column(name="Discount")
 	private double discount;
 
+	@OneToMany(mappedBy = "discount")
+	@JsonIgnore
+	private Set<GameList> games;
+	
 	public Discount() {
 		super();
 	}
@@ -40,6 +49,14 @@ public class Discount {
 
 	public void setDiscount(double discount) {
 		this.discount = discount;
+	}
+
+	public Set<GameList> getGames() {
+		return games;
+	}
+
+	public void setGames(Set<GameList> games) {
+		this.games = games;
 	}
 
 	@Override

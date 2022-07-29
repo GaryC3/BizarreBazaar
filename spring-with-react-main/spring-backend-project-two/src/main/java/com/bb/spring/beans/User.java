@@ -21,7 +21,7 @@ public class User {
 
 	@Column(name = "LastName")
 	private String lastName;
-
+	
 	public User() {
 		super();
 	}
