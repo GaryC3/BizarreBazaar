@@ -26,9 +26,6 @@ public class GameList {
 	@Column(name="Title")
 	private String title;
 	
-	@Column(name="Genre")
-	private String genre;
-	
 	@Column(name="Description")
 	private String description;
 	
@@ -54,7 +51,6 @@ public class GameList {
 		super();
 		this.gameid = gameid;
 		this.title = title;
-		this.genre = genre;
 		this.description = description;
 		this.price = price;
 		this.inventory = inventory;
@@ -75,15 +71,7 @@ public class GameList {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-
-	public String getGenre() {
-		return genre;
-	}
-
-	public void setGenre(String genre) {
-		this.genre = genre;
-	}
-
+	
 	public String getDescription() {
 		return description;
 	}
@@ -127,7 +115,7 @@ public class GameList {
 
 	@Override
 	public String toString() {
-		return "GameList [gameid=" + gameid + ", title=" + title + ", genre=" + genre + ", description=" + description
+		return "GameList [gameid=" + gameid + ", title=" + title + ", description=" + description
 				+ ", price=" + price + ", inventory=" + inventory + ", discount=" + discount + "]";
 	}
 	

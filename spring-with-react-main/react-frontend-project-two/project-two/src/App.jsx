@@ -1,12 +1,40 @@
-import logo from './logo.svg'; // logo used in default react creation
 import './App.css';
 import { UserList } from './components/UserComponent';
+import React from "react";
+import * as ReactDOM from "react-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 
 export const App = () => {
   return (
     <>
       <UserList />
+      <NavLink to="/home">Test</NavLink>
+        
+      ReactDOM.render(  
+        <Router>
+          <div>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route path="/merchant">
+              <Merchant />
+            </Route>
+            <Route path="/purchase">
+              <Purchase />
+            </Route>
+            <Route path="/confirmation">
+              <Confirmation />
+            </Route>
+            <Route path="/sign">
+              <SignUp />
+            </Route>
+            <Route path="/owned">
+              <OwnedGames />
+            </Route>
+          </div>
+        </Router>
+      );
     </>
   );
 }

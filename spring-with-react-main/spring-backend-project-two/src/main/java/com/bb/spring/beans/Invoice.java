@@ -23,9 +23,6 @@ public class Invoice {
 	@Column(name = "Invoice_Id")
 	private int invoice_id;
 	
-	@Column(name="Title")
-	private String title;
-	
 	@ManyToOne // DO NOT use Eager unless you 100% ALWAYS need the child record
 	@JoinColumn(name = "Title")
 	private GameList game;
@@ -41,7 +38,6 @@ public class Invoice {
 	public Invoice(int invoice_id, String title) {
 		super();
 		this.invoice_id = invoice_id;
-		this.title = title;
 	}
 
 	public int getInvoice_id() {
@@ -50,14 +46,6 @@ public class Invoice {
 
 	public void setInvoice_id(int invoice_id) {
 		this.invoice_id = invoice_id;
-	}
-
-	public String getTitle() {
-		return title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
 	}
 	
 
@@ -79,7 +67,7 @@ public class Invoice {
 
 	@Override
 	public String toString() {
-		return "Invoice [invoice_id=" + invoice_id + ", title=" + title + ", game=" + game + "]";
+		return "Invoice [invoice_id=" + invoice_id + ", game=" + game + "]";
 	}
 	
 	

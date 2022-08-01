@@ -18,9 +18,6 @@ public class InvoiceLines {
 	@Column(name ="line_id")
 	private int line_id;
 	
-	@Column(name="Invoice_Id")
-	private int invoice_id;
-	
 	@Column(name ="Title")
 	private String title;
 	
@@ -43,7 +40,6 @@ public class InvoiceLines {
 		super();
 		this.user_id = user_id;
 		this.line_id = line_id;
-		this.invoice_id = invoice_id;
 		this.title = title;
 		this.price = price;
 	}
@@ -63,15 +59,6 @@ public class InvoiceLines {
 	public void setLine_id(int line_id) {
 		this.line_id = line_id;
 	}
-
-	public int getInvoice_id() {
-		return invoice_id;
-	}
-
-	public void setInvoice_id(int invoice_id) {
-		this.invoice_id = invoice_id;
-	}
-
 	public String getTitle() {
 		return title;
 	}
@@ -107,7 +94,7 @@ public class InvoiceLines {
 
 	@Override
 	public String toString() {
-		return "InvoiceLines [user_id=" + user_id + ", line_id=" + line_id + ", invoice_id=" + invoice_id + ", title="
+		return "InvoiceLines [user_id=" + user_id + ", line_id=" + line_id + ", title="
 				+ title + ", price=" + price + ", invoice=" + invoice + ", userList=" + userList + "]";
 	}
 	
