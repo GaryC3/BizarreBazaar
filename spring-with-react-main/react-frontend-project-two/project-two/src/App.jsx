@@ -9,11 +9,8 @@ export const App = () => {
   return (
     <>
       <UserList />
-      <NavLink to="/home">Test</NavLink>
-        
-      ReactDOM.render(  
-        <Router>
-          <div>
+        <BrowserRouter>
+          <Switch>
             <Route exact path="/">
               <Home />
             </Route>
@@ -32,9 +29,8 @@ export const App = () => {
             <Route path="/owned">
               <OwnedGames />
             </Route>
-          </div>
-        </Router>
-      );
+          </Switch>
+        </BrowserRouter>
     </>
   );
 }
