@@ -1,8 +1,9 @@
 import './App.css';
 import { UserList } from './components/UserComponent';
 import React from "react";
-import * as ReactDOM from "react-dom";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+
+import { Home, Merchant, Purchase, Confirmation, SignUp, OwnedGames} from "./pages";
 
 
 export const App = () => {
