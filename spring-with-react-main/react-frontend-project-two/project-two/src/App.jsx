@@ -1,7 +1,7 @@
 import './App.css';
 import { UserList } from './components/UserComponent';
 import React from "react";
-import { BrowserRouter, Route} from "react-router-dom";
+import { BrowserRouter, Route, Routes} from "react-router-dom";
 
 import { Home, Merchant, Purchase, Confirmation, SignUp, OwnedGames} from "./pages";
 
@@ -9,27 +9,19 @@ import { Home, Merchant, Purchase, Confirmation, SignUp, OwnedGames} from "./pag
 export const App = () => {
   return (
     <>
-      <UserList />
+      {/* <UserList /> */}
+      <div>
         <BrowserRouter>
-            <Route exact path="/">
-              <Home />
-            </Route>
-            <Route path="/merchant">
-              <Merchant />
-            </Route>
-            <Route path="/purchase">
-              <Purchase />
-            </Route>
-            <Route path="/confirmation">
-              <Confirmation />
-            </Route>
-            <Route path="/sign">
-              <SignUp />
-            </Route>
-            <Route path="/owned">
-              <OwnedGames />
-            </Route>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/merchant" element={<Merchant />} />
+            <Route path="purchase" element={<Purchase />} />
+            <Route path="/confirmation" element={<Confirmation />} />
+            <Route path="/sign" element={<SignUp />} />
+            <Route path="owned" element={<OwnedGames />} />
+          </Routes>
         </BrowserRouter>
+      </div>
     </>
   );
 }
