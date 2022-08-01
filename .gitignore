@@ -22,3 +22,5 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 spring-with-react-main/react-frontend-project-two/project-two/src/App.jsx
+*.pack
+*.pack
