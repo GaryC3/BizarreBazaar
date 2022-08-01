@@ -1,19 +1,16 @@
 import './App.css';
 import { UserList } from './components/UserComponent';
 import React from "react";
-import * as ReactDOM from "react-dom";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter, Route} from "react-router-dom";
+
+import { Home, Merchant, Purchase, Confirmation, SignUp, OwnedGames} from "./pages";
 
 
 export const App = () => {
   return (
     <>
       <UserList />
-      <NavLink to="/home">Test</NavLink>
-        
-      ReactDOM.render(  
-        <Router>
-          <div>
+        <BrowserRouter>
             <Route exact path="/">
               <Home />
             </Route>
@@ -32,9 +29,7 @@ export const App = () => {
             <Route path="/owned">
               <OwnedGames />
             </Route>
-          </div>
-        </Router>
-      );
+        </BrowserRouter>
     </>
   );
 }
