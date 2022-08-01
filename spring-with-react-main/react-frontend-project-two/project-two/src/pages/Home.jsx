@@ -2,7 +2,9 @@
 export const Home = () => {
     return(
         <>
-        <h1>The Bizarre Bazaar</h1>
+        <div >
+            <h1 class="text-center" style={{fontSize: "40px"}}>The Bizarre Bazaar</h1>
+        </div>
         <div>
         <a href="/merchant" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Create</a>
         <a href="/merchant" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Owned</a>
