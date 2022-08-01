@@ -1,7 +1,7 @@
 import './App.css';
 import { UserList } from './components/UserComponent';
 import React from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route} from "react-router-dom";
 
 import { Home, Merchant, Purchase, Confirmation, SignUp, OwnedGames} from "./pages";
 
@@ -11,7 +11,6 @@ export const App = () => {
     <>
       <UserList />
         <BrowserRouter>
-          <Switch>
             <Route exact path="/">
               <Home />
             </Route>
@@ -30,7 +29,6 @@ export const App = () => {
             <Route path="/owned">
               <OwnedGames />
             </Route>
-          </Switch>
         </BrowserRouter>
     </>
   );
