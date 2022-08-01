@@ -37,7 +37,6 @@ public class InvoiceLines {
 	
 	public InvoiceLines() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public InvoiceLines(int user_id, int line_id, int invoice_id, String title, double price) {

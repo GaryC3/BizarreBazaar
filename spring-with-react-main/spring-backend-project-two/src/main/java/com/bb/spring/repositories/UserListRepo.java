@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import com.bb.spring.beans.UserList;
 
 @Repository
-public interface UserListRepo extends JpaRepository<UserList, Integer>{
+public interface UserListRepo{ //extends JpaRepository<UserList, Integer>{
 	
 
 }
