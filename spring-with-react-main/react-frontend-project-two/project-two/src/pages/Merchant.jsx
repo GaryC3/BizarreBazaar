@@ -2,7 +2,7 @@ export const Merchant = () => {
     return(
         <>
         
-        <h1>2222222222222221</h1>
+        <h1>4</h1>
         </>
     );
 }

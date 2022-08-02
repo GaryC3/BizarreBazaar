@@ -2,7 +2,7 @@ export const SignUp = () => {
     return(
         <>
         
-        <h1>2222222222222221</h1>
+        <h1>1</h1>
         </>
     );
 }

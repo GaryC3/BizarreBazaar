@@ -2,7 +2,7 @@ export const Purchase = () => {
     return(
         <>
         
-        <h1>2222222222222221</h1>
+        <h1>3</h1>
         </>
     );
 }
