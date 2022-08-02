@@ -6,3 +6,8 @@ create table gamelist (
 	inventory INT,
 	genre VARCHAR(12)
 );
+
+create table discount (
+	genre VARCHAR(50),
+	discount DECIMAL(3,2)
+);

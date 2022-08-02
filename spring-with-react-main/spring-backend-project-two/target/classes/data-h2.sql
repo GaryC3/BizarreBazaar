@@ -18,3 +18,11 @@ insert into gamelist (gameid, title, description, price, inventory, genre) value
 insert into gamelist (gameid, title, description, price, inventory, genre) values (18, 'Holdlamis', 'Team-oriented 6th generation hierarchy', 73.92, 70, 'action');
 insert into gamelist (gameid, title, description, price, inventory, genre) values (19, 'Domainer', 'Organic clear-thinking open architecture', 17.47, 55, 'action');
 insert into gamelist (gameid, title, description, price, inventory, genre) values (20, 'Keylex', 'Inverse hybrid monitoring', 85.84, 25, 'strategy');
+
+
+insert into discount (genre, discount) values (1, 'action', 0.92);
+insert into discount (genre, discount) values (2, 'adventure', 0.54);
+insert into discount (genre, discount) values (3, 'role playing', 0.26);
+insert into discount (genre, discount) values (4, 'strategy', 0.99);
+
+
