@@ -1,5 +1,5 @@
 create table gamelist (
-	gameid INT,
+	gameid INT auto_increment,
 	title VARCHAR(50),
 	description TEXT,
 	price DECIMAL(5,2),

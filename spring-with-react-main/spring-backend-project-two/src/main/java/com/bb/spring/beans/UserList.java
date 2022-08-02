@@ -30,6 +30,9 @@ public class UserList {
 	@Column(name="email")
 	private String email;
 	
+	@Column(name="password")
+	private String password;
+	
 	@OneToMany(mappedBy = "userList")
 	@JsonIgnore
 	private Set<InvoiceLines> invoiceLines;
@@ -45,10 +48,19 @@ public class UserList {
 		this.first_name = first_name;
 		this.last_name = last_name;
 		this.email = email;
+		this.password = password;
 	}
 
 	public int getId() {
 		return id;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	public void setId(int id) {
