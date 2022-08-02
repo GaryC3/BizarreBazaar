@@ -46,9 +46,9 @@ public class GameListController {
 	}
 	
 	@PutMapping("/{gameId}")
-	public GameList update(@RequestBody GameList gameList, @PathVariable int gameId) {
-		if(gameListRepo.existsById(gameId)) {
-			gameList.setGameid(gameId);
+	public GameList update(@RequestBody GameList gameList, @PathVariable int gameid) {
+		if(gameListRepo.existsById(gameid)) {
+			gameList.setGameid(gameid);
 			return gameListRepo.save(gameList);
 		}else {
 			throw new IllegalArgumentException("ID doesn't exist");

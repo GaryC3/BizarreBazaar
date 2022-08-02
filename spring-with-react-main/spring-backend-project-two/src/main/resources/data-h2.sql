@@ -26,3 +26,18 @@ insert into discount (genre, discount) values ('roleplaying', 0.26);
 insert into discount (genre, discount) values ('strategy', 0.99);
 
 
+insert into userlist (first_name, last_name, email, password) values ('Ezri', 'Seathwright', 'eseathwright0@utexas.edu', '5s1UvZn0mm7P');
+insert into userlist (first_name, last_name, email, password) values ('Garwood', 'Pether', 'gpether1@ibm.com', 'yd0FX6');
+insert into userlist (first_name, last_name, email, password) values ('Astrid', 'Crimes', 'acrimes2@so-net.ne.jp', 't0D52ifWJ8');
+insert into userlist (first_name, last_name, email, password) values ('Isidoro', 'Renackowna', 'irenackowna3@cbsnews.com', 'GffzajGB2');
+insert into userlist (first_name, last_name, email, password) values ('Padgett', 'Walsh', 'pwalsh4@360.cn', 'jWMUJVh1X');
+insert into userlist (first_name, last_name, email, password) values ('Pen', 'Cops', 'pcops5@gmpg.org', 'vOBSiP5');
+insert into userlist (first_name, last_name, email, password) values ('Else', 'Saura', 'esaura6@wiley.com', '5z7qYOji3');
+insert into userlist (first_name, last_name, email, password) values ('Edan', 'Mallam', 'emallam7@nasa.gov', 'Sva2hHZqyNVS');
+insert into userlist (first_name, last_name, email, password) values ('Ema', 'Faucett', 'efaucett8@thetimes.co.uk', 'xQrEaZ3xIV');
+insert into userlist (first_name, last_name, email, password) values ('Penn', 'Tomsu', 'ptomsu9@vistaprint.com', 'Gm0Zgv6Rf');
+insert into userlist (first_name, last_name, email, password) values ('Ely', 'Reith', 'ereitha@bbb.org', '4N57BKnRc');
+insert into userlist (first_name, last_name, email, password) values ('Giraud', 'Lawland', 'glawlandb@fc2.com', 'WSxzfJ');
+insert into userlist (first_name, last_name, email, password) values ('Jacenta', 'Rumble', 'jrumblec@naver.com', 'KvDEDhu9Kig');
+insert into userlist (first_name, last_name, email, password) values ('Arabele', 'Karolczyk', 'akarolczykd@t-online.de', 'pADEkOrY3');
+insert into userlist (first_name, last_name, email, password) values ('Nolan', 'Salzberg', 'nsalzberge@toplist.cz', 'XrMvJi');

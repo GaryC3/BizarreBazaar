@@ -11,3 +11,11 @@ create table discount (
 	genre VARCHAR(50),
 	discount DECIMAL(3,2)
 );
+
+create table userlist (
+	id INT auto_increment,
+	first_name VARCHAR(50),
+	last_name VARCHAR(50),
+	email VARCHAR(50),
+	password VARCHAR(50)
+);

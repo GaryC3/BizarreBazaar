@@ -18,7 +18,7 @@ import com.bb.spring.repositories.UserListRepo;
 
 @CrossOrigin(origins = "http://localhost:3000/")
 @RestController
-@RequestMapping("userlist/")
+@RequestMapping("userlist")
 public class UserListController {
 	
 	@Autowired
