@@ -46,6 +46,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 //		http.authorizeRequests().mvcMatchers("/album/**").hasAnyRole("ADMIN");
 //		http.authorizeRequests().mvcMatchers("/tracks/**").hasAnyRole("ADMIN");
 		http.authorizeRequests().mvcMatchers("/**").permitAll();
+		http.authorizeRequests().anyRequest().permitAll();
 		http.logout().deleteCookies("custom-cookie").invalidateHttpSession(false); // POST /logout
 		// CSRF - 
 		// 1. login to Bank of America (session, cookie)

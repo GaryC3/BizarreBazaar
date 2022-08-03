@@ -39,13 +39,13 @@ public class GameListController {
 		return new ResponseEntity<>(gameListRepo.save(gameList), HttpStatus.CREATED);
 	}
 	
-	@DeleteMapping
-	public ResponseEntity<GameList> delete(@PathVariable int gameId){
-		gameListRepo.deleteById(gameId);
-		return ResponseEntity.noContent().header("a", "a").build();
+	@DeleteMapping("/{gameid}")
+	public ResponseEntity<GameList> delete(@PathVariable int gameid){
+		gameListRepo.deleteById(gameid);
+		return ResponseEntity.noContent().build();
 	}
 	
-	@PutMapping("/{gameId}")
+	@PutMapping("/{gameid}")
 	public GameList update(@RequestBody GameList gameList, @PathVariable int gameid) {
 		if(gameListRepo.existsById(gameid)) {
 			gameList.setGameid(gameid);
