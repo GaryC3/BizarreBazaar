@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -22,12 +24,15 @@ public class UserList {
 	private int id;
 	
 	@Column(name="first_name")
+	@NotBlank
 	private String first_name;
 	
 	@Column(name="last_name")
+	@NotBlank
 	private String last_name;
 	
 	@Column(name="email")
+	@Email
 	private String email;
 	
 	@Column(name="password")

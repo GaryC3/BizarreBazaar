@@ -11,6 +11,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.PositiveOrZero;
+import javax.validation.executable.ValidateOnExecution;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -24,15 +27,18 @@ public class GameList {
 	private int gameid;
 	
 	@Column(name="Title")
+	@NotBlank
 	private String title;
 	
 	@Column(name="Description")
 	private String description;
 	
 	@Column(name="Price")
+	@PositiveOrZero
 	private double price;
 	
 	@Column(name="Inventory")
+	@PositiveOrZero
 	private int inventory;
 	
 	@ManyToOne // DO NOT use Eager unless you 100% ALWAYS need the child record

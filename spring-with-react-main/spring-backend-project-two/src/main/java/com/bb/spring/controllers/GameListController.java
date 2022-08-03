@@ -51,7 +51,7 @@ public class GameListController {
 			gameList.setGameid(gameid);
 			return gameListRepo.save(gameList);
 		}else {
-			throw new IllegalArgumentException("ID doesn't exist");
+			throw new IllegalArgumentException("There is no such listing  ");
 			
 		}
 	}

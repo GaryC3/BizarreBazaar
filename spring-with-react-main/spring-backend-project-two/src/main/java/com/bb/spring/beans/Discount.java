@@ -16,9 +16,11 @@ public class Discount {
 	
 	@Id
 	@Column(name="Genre")
+	@javax.validation.constraints.NotNull
 	private String genre;
 	
 	@Column(name="Discount")
+	@javax.validation.constraints.PositiveOrZero
 	private double discount;
 
 	@OneToMany(mappedBy = "discount")
