@@ -1,8 +1,11 @@
+import {sign} from "../components"
 export const SignUp = () => {
     return(
         <>
-        
-        <h1>1</h1>
+        <div >
+            <h1 class="text-center title">Sign-up</h1>
+        </div>
+        <sign.SSigning />
         </>
     );
 }
