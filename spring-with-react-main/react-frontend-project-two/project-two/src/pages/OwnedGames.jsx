@@ -1,8 +1,12 @@
+import {own} from "../components"
 export const OwnedGames = () => {
     return(
         <>
-        
-        <h1>2</h1>
-        </>
+        <div >
+            <h1 class="text-center title">Game Library</h1>
+        </div>
+
+        <own.OGames />
+        </> 
     );
 }

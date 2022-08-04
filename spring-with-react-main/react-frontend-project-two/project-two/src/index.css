@@ -39,7 +39,13 @@ code {
   font-size: 50px;
   padding: 35px
 }
-
+.gameSize {
+  height: 180px;
+  width: 180px;
+  margin: 45px;
+  
+  margin-bottom: 100px;
+}
 
 /* .navbar {
   display: flex;
