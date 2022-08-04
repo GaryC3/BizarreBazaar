@@ -1,11 +1,10 @@
 import {own} from "../components"
+import {back} from "../components"
 export const OwnedGames = () => {
     return(
         <>
-        <div >
-            <h1 class="text-center title">Game Library</h1>
-        </div>
-
+        <back.Back/>
+        <h1 className="text-center title">Game Library</h1>
         <own.OGames />
         </> 
     );

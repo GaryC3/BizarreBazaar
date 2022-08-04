@@ -1,10 +1,10 @@
 import {sign} from "../components"
+import {back} from "../components"
 export const SignUp = () => {
     return(
         <>
-        <div >
-            <h1 class="text-center title">Sign-up</h1>
-        </div>
+        <back.Back/>
+        <h1 className=" title ">Sign-up</h1>
         <sign.SSigning />
         </>
     );
