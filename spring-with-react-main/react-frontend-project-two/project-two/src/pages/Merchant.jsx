@@ -1,7 +1,9 @@
 import {admin} from "../components"
+import {back} from "../components"
 export const Merchant = () => {
     return(
         <>
+        <back.Back/>
         <div >
             <h1 class="text-center title">Add new game</h1>
             <admin.MNew />
