@@ -18,7 +18,7 @@ export const App = () => {
             <Route path="purchase" element={<Purchase />} />
             <Route path="/confirmation" element={<Confirmation />} />
             <Route path="/sign" element={<SignUp />} />
-            <Route path="/owned" element={<OwnedGames />} />
+            <Route path="/owned" element={<OwnedGames />} /> 
           </Routes>
         </BrowserRouter>
       </div>

@@ -5,7 +5,7 @@ export const Home = () => {
         <div >
             <h1 class="text-center title">The Bizarre Bazaar</h1>
         </div>
-        <go.HNavigate />
+        <go.HNavigate /> 
         </>
     );
 }
