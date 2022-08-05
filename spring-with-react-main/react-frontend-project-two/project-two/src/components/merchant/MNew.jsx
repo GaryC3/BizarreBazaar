@@ -8,18 +8,20 @@ export const MNew = () => {
     const priceRef = useRef();
     const quantityRef = useRef();
     const descriptionRef = useRef();
+    var select;
 
     const handleSubmit = async (e) =>{
         try{
             e.preventDefault();
+
             await axios.post(`http://localhost:8080/gameList`, {
                 
                 title: titleRef.current.value,
                 description: descriptionRef.current.value,
                 price: priceRef.current.value,
                 inventory: quantityRef.current.value,
-                discount:{
-                    genre: genreRef.current.value
+                discount :{
+                    genre: document.getElementById('genre').options[document.getElementById('genre').selectedIndex].value
                 }
                     
             });
@@ -34,19 +36,21 @@ export const MNew = () => {
             console.log(err); 
         }
     }
+    
+        
     return(
         <>
         <div class="input-group mb-3 long">
             <input type="text" class="form-control bg-light" placeholder="Title" aria-label="title" id="title" ref={titleRef} required  />
-            <input type="text" class="form-control bg-light" placeholder="Genre" aria-label="genre" id="genre" ref={genreRef} required />
-            {/* <select class="form-control bg-light" searchable="Search here..">
-                <option id="genre" ref={genreRef} required value="" disabled selected>Select Game</option>
-                <option value={genreRef}>action</option>
+            {/* <input type="text" class="form-control bg-light" placeholder="Genre" aria-label="genre" id="genre" ref={genreRef} required /> */}
+            <select class="form-control bg-light" searchable="Search here.." name="genre" id="genre">
+                <option id="genre" required value="" disabled selected>Select Game</option>
+                <option value="action">action</option>
                 <option value="2">b</option>
                 <option value="3">c</option>
                 <option value="4">d</option>
-                <option value={genreRef} >e</option>
-            </select> */}
+                <option value="e" >e</option>
+            </select>
             <input type="number" class="form-control bg-light" placeholder="Price" ara-label="price" id="price" ref={priceRef} required  />
             <input type="number" class="form-control bg-light" placeholder="Quantity" ara-label="quantity" id="quantity" ref={quantityRef} required />
         </div>
@@ -60,9 +64,15 @@ export const MNew = () => {
                 </div>
         
         </div>
+
+        
         </>   
         
         
+        
     );
+    
+
+    
     
 }
