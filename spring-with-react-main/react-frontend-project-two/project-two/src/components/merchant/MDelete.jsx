@@ -1,10 +1,18 @@
 import axios from "axios";
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 
 export const MDelete = () => {
 
     const title = useRef();
     const quantity = useRef();
+
+    
+    const[setGames] = useState([]);
+
+        useEffect(() => {  
+        axios.get('http://localhost:8080/gameList')
+            .then(res => {setGames(res.data)}) // sets my devs state to be that array of devs
+        }, []); 
     return(
         <>
         <div class="input-group mb-3 long">
