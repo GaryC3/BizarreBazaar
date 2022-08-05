@@ -86,9 +86,11 @@ code {
 .gameSize {
   height: 180px;
   width: 180px;
-  margin: 45px;
-  
-  margin-bottom: 100px;
+  margin: 65px;
+  margin-right: 20px;
+  margin-left: 40px;
+  margin-top: 50px;
+  margin-bottom:60px;
 }
 .back {
   
@@ -101,6 +103,30 @@ code {
 }
 .sign {
   margin-left: 257px;
+}
+.sign {
+  margin-left: 257px;
+  position: relative;
+}
+.seperate {
+  padding-right: 200px;
+  position: relative;
+}
+#container {
+   margin: 20px; 
+  
+  display: flex;                  /* establish flex container */
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;            /* default value; can be omitted */
+  flex-wrap: wrap;              /* default value; can be omitted */
+  /*justify-content: space-between; /* switched from default (flex-start, see below) */
+  /* background-color: rgb(232, 236, 243); */
+}
+#container > div {
+  width: 300px;
+  height: 400px;
+  border: 2px solid black;
 }
 
 
