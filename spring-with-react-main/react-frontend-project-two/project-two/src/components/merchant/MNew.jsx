@@ -21,6 +21,7 @@ export const MNew = () => {
                 discount:{
                     genre: genreRef.current.value
                 }
+                    
             });
 
             titleRef.current.value = null;
@@ -37,7 +38,15 @@ export const MNew = () => {
         <>
         <div class="input-group mb-3 long">
             <input type="text" class="form-control bg-light" placeholder="Title" aria-label="title" id="title" ref={titleRef} required  />
-            <input type="text" class="form-control bg-light" placeholder="Genre" aria-label="genre" id="genre" ref={genreRef} required  />
+            <input type="text" class="form-control bg-light" placeholder="Genre" aria-label="genre" id="genre" ref={genreRef} required />
+            {/* <select class="form-control bg-light" searchable="Search here..">
+                <option id="genre" ref={genreRef} required value="" disabled selected>Select Game</option>
+                <option value={genreRef}>action</option>
+                <option value="2">b</option>
+                <option value="3">c</option>
+                <option value="4">d</option>
+                <option value={genreRef} >e</option>
+            </select> */}
             <input type="number" class="form-control bg-light" placeholder="Price" ara-label="price" id="price" ref={priceRef} required  />
             <input type="number" class="form-control bg-light" placeholder="Quantity" ara-label="quantity" id="quantity" ref={quantityRef} required />
         </div>
