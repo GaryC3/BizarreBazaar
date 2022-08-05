@@ -6,6 +6,7 @@ export const Purchase = () => {
         <back.Back/>
         <h1 className="text-center title">GAMES</h1>
         <buy.PGames/>
+        <buy.PPurchase/>
         </>
     );
 }
