@@ -3,8 +3,25 @@ import { useRef } from 'react';
 
 export const MDiscount = () => {
 
-    const genre = useRef();
-    const discount = useRef();
+    const genreRef = useRef();
+    const discountRef = useRef();
+    
+    const handleSubmit = async (e) =>{
+        try{
+            e.preventDefault();
+            await axios.post(`http://localhost:8080/userlist`, {
+                genre: genreRef.current.value,
+                discount: discountRef.current.value
+            });
+
+            // firstRef.current.value = null;
+            // lastRef.current.value = null;
+            // emailRef.current.value = null;
+            // passwordRef.current.value = null;
+        }catch(err){
+            console.log(err); 
+        }
+    }
     return(
         <>
         

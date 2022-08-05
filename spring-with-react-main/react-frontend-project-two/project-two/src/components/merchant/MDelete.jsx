@@ -3,9 +3,9 @@ import { useRef, useState, useEffect } from 'react';
 
 export const MDelete = () => {
 
-    const title = useRef();
+    const titleRef = useRef();
     const quantity = useRef();
-
+    const gameid = useRef();
     
     const[games, setGames] = useState([]);
 
@@ -17,7 +17,7 @@ export const MDelete = () => {
         const handleDelete = async (e) =>{
             try{
                 e.preventDefault();
-                await axios.delete(`http://localhost:8080/gameList?gameid}`, {
+                await axios.delete(`http://localhost:8080/gameList?{gameid}}`, {
                     // first_name: firstRef.current.value,
                     // last_name: lastRef.current.value,
                     // email: emailRef.current.value,
@@ -40,6 +40,7 @@ export const MDelete = () => {
                 console.log(err); 
             }
         }
+        console.log()
     return(
         <>
         
@@ -48,12 +49,14 @@ export const MDelete = () => {
         <option value="" disabled selected>Select Game</option>
         {games.map((game, i, e) =>{
                     return(
-                         <option value="game">{game.title} </option> 
+                         <option value="game" ref={titleRef}>{game.title}</option> 
+                        
+                         
                     )
                 }
                 )}
             </select> 
-            <input type="number" class="form-control bg-light" placeholder="quantity" ara-label="quantity" required />
+            <input type="number" class="form-control bg-light" placeholder="" ara-label="quantity" required />
             
         </div>
         <div class= "input-group mb-3 long3">

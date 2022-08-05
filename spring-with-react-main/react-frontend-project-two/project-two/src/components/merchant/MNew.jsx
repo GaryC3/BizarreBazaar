@@ -39,7 +39,7 @@ export const MNew = () => {
         <div class="input-group mb-3 long">
             <input type="text" class="form-control bg-light" placeholder="Title" aria-label="title" id="title" ref={titleRef} required  />
             <input type="text" class="form-control bg-light" placeholder="Genre" aria-label="genre" id="genre" ref={genreRef} required />
-            {/* <select class="form-control bg-light" searchable="Search here..">
+            {/* <select class="form-control bg-light" searchable="Search here.." ref={genreRef}>
                 <option id="genre" ref={genreRef} required value="" disabled selected>Select Game</option>
                 <option value={genreRef}>action</option>
                 <option value="2">b</option>
