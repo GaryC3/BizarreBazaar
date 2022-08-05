@@ -3,25 +3,50 @@ import { useRef } from 'react';
 
 export const MNew = () => {
 
-    const title = useRef();
-    const genre = useRef();
-    const price = useRef();
-    const quantity = useRef();
-    const description = useRef();
+    const titleRef = useRef();
+    const genreRef = useRef();
+    const priceRef = useRef();
+    const quantityRef = useRef();
+    const descriptionRef = useRef();
+
+    const handleSubmit = async (e) =>{
+        try{
+            e.preventDefault();
+            await axios.post(`http://localhost:8080/gameList`, {
+                
+                title: titleRef.current.value,
+                description: descriptionRef.current.value,
+                price: priceRef.current.value,
+                inventory: quantityRef.current.value,
+                discount:{
+                    genre: genreRef.current.value
+                }
+            });
+
+            titleRef.current.value = null;
+            descriptionRef.current.value = null;
+            priceRef.current.value = null;
+            quantityRef.current.value = null;
+            genreRef.current.value = null;
+
+        }catch(err){
+            console.log(err); 
+        }
+    }
     return(
         <>
         <div class="input-group mb-3 long">
-            <input type="text" class="form-control bg-light" placeholder="Title" aria-label="title" required  />
-            <input type="text" class="form-control bg-light" placeholder="Genre" aria-label="genre" required  />
-            <input type="number" class="form-control bg-light" placeholder="Price" ara-label="price" required  />
-            <input type="number" class="form-control bg-light" placeholder="Quantity" ara-label="quantity" required />
+            <input type="text" class="form-control bg-light" placeholder="Title" aria-label="title" id="title" ref={titleRef} required  />
+            <input type="text" class="form-control bg-light" placeholder="Genre" aria-label="genre" id="genre" ref={genreRef} required  />
+            <input type="number" class="form-control bg-light" placeholder="Price" ara-label="price" id="price" ref={priceRef} required  />
+            <input type="number" class="form-control bg-light" placeholder="Quantity" ara-label="quantity" id="quantity" ref={quantityRef} required />
         </div>
         <div class="input-group mb-3 longnopadding">
             
                 <div>
-                    <textarea class="bg-light bigtextbox" placeholder="description" aria-label="description"></textarea>
+                    <textarea class="bg-light bigtextbox" placeholder="description" aria-label="description" id="description" ref={descriptionRef} required></textarea>
                     {/* <input type= "textarea" class="bg-light bigtextbox" placeholder="Description" aria-label="description" /> */}
-                    <button class="btn btn-primary active merchantaddsubmit" type="button" /*onClick={handleSubmit}*/>Submit</button>
+                    <button class="btn btn-primary active merchantaddsubmit" type="button" onClick={handleSubmit}>Submit</button>
                     
                 </div>
         
