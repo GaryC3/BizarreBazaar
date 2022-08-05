@@ -1,8 +1,9 @@
+import {back} from "../components"
 export const Purchase = () => {
     return(
         <>
-        
-        <h1>3</h1>
+        <back.Back/>
+        <h1>GAMES</h1>
         </>
     );
 }

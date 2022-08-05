@@ -31,8 +31,8 @@ public class UserListController {
 	
 	@PostMapping
 	@Transactional
-	public ResponseEntity<UserList> save(@RequestBody UserList userList){
-		return new ResponseEntity<>(userListRepo.save(userList), HttpStatus.CREATED);
+	public ResponseEntity<UserList> save(@RequestBody UserList userlist){
+		return new ResponseEntity<>(userListRepo.save(userlist), HttpStatus.CREATED);
 	}
 
 }

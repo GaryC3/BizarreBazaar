@@ -25,6 +25,48 @@ code {
   margin-left: 85px;
   font-size: 35px;
 }
+.long3 {
+  margin: 45px;
+  padding-bottom: 0px;
+  width: 860px;
+  font-size: 35px;
+  justify-content: space-around;
+}
+.longnopadding {
+  margin: 5px;
+  padding-bottom: 50px;
+  width: 860px;
+  height: 200px;
+  font-size: 35px;
+}
+.bigtextbox {
+  height: 140px;
+  width: 500px;
+  margin: 45px;
+}
+.mdiscountbox {
+  justify-content: space-evenly;
+  height: 160px;
+  
+}
+.merchantaddsubmit {
+  clear: left;
+  margin-left: 20px;
+  margin-bottom: 220px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  font-size: 35px;
+  width: 200px;
+  border-radius: 25px;
+}
+.merchantdiscount {
+  clear: left;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  font-size: 15px;
+  width: 100px;
+  border-radius: 25px;
+}
 .button1 {
   clear: left;
   margin: 80px;
