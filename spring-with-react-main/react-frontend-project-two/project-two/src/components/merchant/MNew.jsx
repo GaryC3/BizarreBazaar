@@ -45,11 +45,10 @@ export const MNew = () => {
             {/* <input type="text" class="form-control bg-light" placeholder="Genre" aria-label="genre" id="genre" ref={genreRef} required /> */}
             <select class="form-control bg-light" searchable="Search here.." name="genre" id="genre">
                 <option id="genre" required value="" disabled selected>Select Game</option>
-                <option value="action">action</option>
-                <option value="2">b</option>
-                <option value="3">c</option>
-                <option value="4">d</option>
-                <option value="e" >e</option>
+                <option value="action">Action</option>
+                <option value="adventure">Adventure</option>
+                <option value="roleplaying">Roleplaying</option>
+                <option value="strategy">Strategy</option>
             </select>
             <input type="number" class="form-control bg-light" placeholder="Price" ara-label="price" id="price" ref={priceRef} required  />
             <input type="number" class="form-control bg-light" placeholder="Quantity" ara-label="quantity" id="quantity" ref={quantityRef} required />
