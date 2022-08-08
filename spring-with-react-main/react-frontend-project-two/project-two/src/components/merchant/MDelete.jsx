@@ -5,7 +5,8 @@ export const MDelete = () => {
 
     const titleRef = useRef();
     const quantity = useRef();
-    const gameid = useRef();
+    const gameid = useRef(); 
+    var temp;
     
     const[games, setGames] = useState([]);
 
@@ -18,7 +19,8 @@ export const MDelete = () => {
             try{
                 e.preventDefault(); 
                 console.log(document.getElementById('gameid').options[document.getElementById('gameid').selectedIndex].value)
-                await axios.delete(`http://localhost:8080/gameList/?{document.getElementById('gameid').options[document.getElementById('gameid').selectedIndex].value}`);
+                temp = document.getElementById('gameid').options[document.getElementById('gameid').selectedIndex].value;
+                await axios.delete(`http://localhost:8080/gameList/${temp}`);
                 console.log("pass"); 
             }catch(err){
                 console.log("fail"); 

@@ -40,8 +40,9 @@ public class GameListController {
 	}
 	
 	@DeleteMapping("/{gameid}")
-	public ResponseEntity<GameList> delete(@PathVariable int gameid){
-		gameListRepo.deleteById(gameid);
+	public ResponseEntity<GameList> delete(@PathVariable String gameid){
+		int realgameid = Integer.parseInt(gameid);
+		gameListRepo.deleteById(realgameid);
 		return ResponseEntity.noContent().build();
 	}
 	
