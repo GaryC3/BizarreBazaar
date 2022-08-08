@@ -14,33 +14,33 @@ export const MDiscount = () => {
             .then(res => {setDiscount(res.data)}) // sets discout state to be that array of discounts
         }, [setDiscount]); 
     
-        const [inEditMode, setInEditMode] = useState({
-            status: false,
-            rowKey: null
-        });
-        const [currentDiscount, setCurrentDiscount] = useState(null);
+        // const [inEditMode, setInEditMode] = useState({
+        //     status: false,
+        //     rowKey: null
+        // });
+        // const [currentDiscount, setCurrentDiscount] = useState(null);
 
-        const onEdit = ({genre, discountValue}) => {
-            setInEditMode({
-                status: true,
-                rowKey: genre
-            })
-            setCurrentDiscount(discountValue);
-        }
+        // const onEdit = ({genre, discountValue}) => {
+        //     setInEditMode({
+        //         status: true,
+        //         rowKey: genre
+        //     })
+        //     setCurrentDiscount(discountValue);
+        // }
         
-        const onSave = ({genre, newDiscount}) => {
-            handleSubmit({genre, newDiscount});
-        }
+        // const onSave = ({genre, newDiscount}) => {
+        //     handleSubmit({genre, newDiscount});
+        // }
     
-        const onCancel = () => {
-            // reset the inEditMode state value
-            setInEditMode({
-                status: false,
-                rowKey: null
-            })
-            // reset the unit price state value
-            setCurrentDiscount(null);
-        }
+        // const onCancel = () => {
+        //     // reset the inEditMode state value
+        //     setInEditMode({
+        //         status: false,
+        //         rowKey: null
+        //     })
+        //     // reset the unit price state value
+        //     setCurrentDiscount(null);
+        // }
 
     const handleSubmit = async (e) =>{
         try{
@@ -50,7 +50,8 @@ export const MDiscount = () => {
                 discount: discountRef.current.value
                 
             });
-            setDiscount([...discountdata, data])
+            setDiscount([discountdata, data]);
+            // setDiscount([...discountdata, data]);
             // firstRef.current.value = null;
             // lastRef.current.value = null;
             // emailRef.current.value = null;
@@ -70,7 +71,8 @@ export const MDiscount = () => {
                     return(
                         <tr key={discount.genre}>
                             <td>{discount.genre}</td>
-                                {
+                            <td>{discount.discount}</td>
+                                {/* {
                                     inEditMode.status && inEditMode.rowKey === discount.genre ? (
                                         <input value={currentDiscount}
                                                onChange={(event) => setCurrentDiscount(event.target.value)}
@@ -106,8 +108,8 @@ export const MDiscount = () => {
                                             Edit
                                         </button>
                                     )
-                                }
-                            </td>
+                                } */}
+                            
 
 
                         </tr>

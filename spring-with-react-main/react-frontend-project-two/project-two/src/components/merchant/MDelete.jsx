@@ -49,20 +49,20 @@ export const MDelete = () => {
         <option disabled selected>Select Game</option>
         {games.map((game, i, e) =>{
                     return(
-                         <option value={game.gameid}>{game.gameid}{game.title}</option> 
+                         <option value={game.gameid}>{game.title}</option> 
                         
                          
                     )
                 }
                 )}
             </select> 
-            <input type="number" class="form-control bg-light" placeholder="" ara-label="quantity" required />
+            {/* <input type="number" class="form-control bg-light" placeholder="" ara-label="quantity" required /> */}
             
         </div>
         <div class= "input-group mb-3 long3">
             <button class="btn btn-primary active button1" type="button" onClick={handleDelete}>Delete</button>
 
-            <button class="btn btn-primary active button1" type="button" /*onClick={handleUpdate}*/>Update</button>
+            {/* <button class="btn btn-primary active button1" type="button" onClick={handleUpdate}>Update</button> */}
         </div>    
         </>   
         
