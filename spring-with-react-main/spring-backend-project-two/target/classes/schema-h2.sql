@@ -19,3 +19,15 @@ create table userlist (
 	email VARCHAR(50),
 	password VARCHAR(50)
 );
+
+create table invoice (
+	invoice_id INT auto_increment,
+	id INT,
+	gameid INT
+);
+
+create table invoiceLines (
+	line_id INT auto_increment,
+	id INT,
+	gameid INT
+);

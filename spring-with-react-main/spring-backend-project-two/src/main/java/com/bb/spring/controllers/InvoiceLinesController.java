@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.bb.spring.beans.GameList;
 import com.bb.spring.beans.Invoice;
+import com.bb.spring.beans.InvoiceLines;
 import com.bb.spring.repositories.GameListRepo;
 import com.bb.spring.repositories.InvoiceLineRepo;
 import com.bb.spring.repositories.InvoiceRepo;
@@ -40,8 +41,8 @@ public class InvoiceLinesController {
 	
 	@PostMapping
 	@Transactional
-	public ResponseEntity<Invoice> save(@RequestBody Invoice invoice){
-		return new ResponseEntity<>(invoiceRepo.save(invoice), HttpStatus.CREATED);
+	public ResponseEntity<InvoiceLines> save(@RequestBody InvoiceLines invoiceLine){
+		return new ResponseEntity<>(invoiceLineRepo.save(invoiceLine), HttpStatus.CREATED);
 	}
 
 }

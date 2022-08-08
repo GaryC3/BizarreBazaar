@@ -19,12 +19,6 @@ public class InvoiceLines {
 	@Column(name ="line_id")
 	private int line_id;
 	
-	@Column(name ="Title")
-	private String title;
-	
-	@Column(name="Price")
-	private double price;
-	
 	@ManyToOne // DO NOT use Eager unless you 100% ALWAYS need the child record
 	@JoinColumn(name = "gameid")
 	private GameList gameList;
@@ -32,65 +26,57 @@ public class InvoiceLines {
 	@ManyToOne // DO NOT use Eager unless you 100% ALWAYS need the child record
 	@JoinColumn(name = "id")
 	private UserList userList;
+
 	
 	public InvoiceLines() {
 		super();
 	}
 
-	public InvoiceLines(int line_id, int gameid, String title, double price, GameList gameList, UserList userList) {
+
+	public InvoiceLines(int line_id, GameList gameList, UserList userList) {
 		super();
 		this.line_id = line_id;
-		this.title = title;
-		this.price = price;
 		this.gameList = gameList;
 		this.userList = userList;
 	}
+
 
 	public int getLine_id() {
 		return line_id;
 	}
 
+
 	public void setLine_id(int line_id) {
 		this.line_id = line_id;
 	}
 
-	public String getTitle() {
-		return title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
-	}
-
-	public double getPrice() {
-		return price;
-	}
-
-	public void setPrice(double price) {
-		this.price = price;
-	}
 
 	public GameList getGameList() {
 		return gameList;
 	}
 
+
 	public void setGameList(GameList gameList) {
 		this.gameList = gameList;
 	}
+
 
 	public UserList getUserList() {
 		return userList;
 	}
 
+
 	public void setUserList(UserList userList) {
 		this.userList = userList;
 	}
 
+
 	@Override
 	public String toString() {
-		return "InvoiceLines [line_id=" + line_id + ", title=" + title + ", price=" + price
-				+ ", gameList=" + gameList + ", userList=" + userList + "]";
+		return "InvoiceLines [line_id=" + line_id + "]";
 	}
+
+	
 
 	
 	
