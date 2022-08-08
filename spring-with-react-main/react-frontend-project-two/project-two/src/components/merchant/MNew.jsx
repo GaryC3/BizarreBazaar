@@ -44,7 +44,7 @@ export const MNew = () => {
             <input type="text" class="form-control bg-light" placeholder="Title" aria-label="title" id="title" ref={titleRef} required  />
             {/* <input type="text" class="form-control bg-light" placeholder="Genre" aria-label="genre" id="genre" ref={genreRef} required /> */}
             <select class="form-control bg-light" searchable="Search here.." name="genre" id="genre">
-                <option id="genre" required value="" disabled selected>Select Game</option>
+                <option id="genre" required value="" disabled selected>Select Genre</option>
                 <option value="action">Action</option>
                 <option value="adventure">Adventure</option>
                 <option value="roleplaying">Roleplaying</option>
