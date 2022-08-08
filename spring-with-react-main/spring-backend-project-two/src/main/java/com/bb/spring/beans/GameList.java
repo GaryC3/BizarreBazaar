@@ -115,12 +115,12 @@ public class GameList {
 		this.discount = discount;
 	}
 
-	public Set<Invoice> getInvoices() {
-		return invoices;
+	public Set<Invoice> getInvoice() {
+		return invoice;
 	}
 
-	public void setInvoices(Set<Invoice> invoices) {
-		this.invoices = invoices;
+	public void setInvoices(Set<Invoice> invoice) {
+		this.invoice = invoice;
 	}
 
 	@Override
