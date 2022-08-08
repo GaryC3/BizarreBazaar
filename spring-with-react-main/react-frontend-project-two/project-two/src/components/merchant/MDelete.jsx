@@ -16,12 +16,12 @@ export const MDelete = () => {
 
         const handleDelete = async (e) =>{
             try{
-                e.preventDefault();
+                e.preventDefault(); 
                 console.log(document.getElementById('gameid').options[document.getElementById('gameid').selectedIndex].value)
-                await axios.delete(`http://localhost:8080/gameList/?{game.gameid}`, {
-                    gamid: document.getElementById('gameid').options[document.getElementById('gameid').selectedIndex].value
-                });
+                await axios.delete(`http://localhost:8080/gameList/?{document.getElementById('gameid').options[document.getElementById('gameid').selectedIndex].value}`);
+                console.log("pass"); 
             }catch(err){
+                console.log("fail"); 
                 console.log(err); 
             }
         }
@@ -43,11 +43,11 @@ export const MDelete = () => {
         <>
         
         <div class="input-group mb-3 long">
-        <select class="form-control bg-light" searchable="Search here..">
+        <select class="form-control bg-light" searchable="Search here.." name="gameid" id="gameid">
         <option disabled selected>Select Game</option>
         {games.map((game, i, e) =>{
                     return(
-                         <option id='gameid' value={game.gameid} key={game.gameid} ref={gameid}>{game.gameid}{game.title}</option> 
+                         <option value={game.gameid}>{game.gameid}{game.title}</option> 
                         
                          
                     )
