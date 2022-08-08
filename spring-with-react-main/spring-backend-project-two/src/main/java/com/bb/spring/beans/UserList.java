@@ -42,30 +42,29 @@ public class UserList {
 	@JsonIgnore
 	private Set<InvoiceLines> invoiceLines;
 	
+	@OneToMany(mappedBy = "userList")
+	@JsonIgnore
+	private Set<Invoice> invoice;
+	
 	public UserList() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public UserList(int id, String first_name, String last_name, String email) {
+	public UserList(int id, @NotBlank String first_name, @NotBlank String last_name, @Email String email,
+			String password, Set<InvoiceLines> invoiceLines, Set<Invoice> invoice) {
 		super();
 		this.id = id;
 		this.first_name = first_name;
 		this.last_name = last_name;
 		this.email = email;
 		this.password = password;
+		this.invoiceLines = invoiceLines;
+		this.invoice = invoice;
 	}
 
 	public int getId() {
 		return id;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
 	}
 
 	public void setId(int id) {
@@ -95,7 +94,14 @@ public class UserList {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
 
 	public Set<InvoiceLines> getInvoiceLines() {
 		return invoiceLines;
@@ -105,11 +111,20 @@ public class UserList {
 		this.invoiceLines = invoiceLines;
 	}
 
+	public Set<Invoice> getInvoice() {
+		return invoice;
+	}
+
+	public void setInvoice(Set<Invoice> invoice) {
+		this.invoice = invoice;
+	}
+
 	@Override
 	public String toString() {
 		return "UserList [id=" + id + ", first_name=" + first_name + ", last_name=" + last_name + ", email=" + email
-				+ "]";
+				+ ", password=" + password + ", invoiceLines=" + invoiceLines + ", invoice=" + invoice + "]";
 	}
+
 	
 
 }

@@ -45,9 +45,13 @@ public class GameList {
 	@JoinColumn(name = "Genre")
 	private Discount discount;
 	
-	@OneToMany(mappedBy = "game")
+	@OneToMany(mappedBy = "gameList")
 	@JsonIgnore
-	private Set<Invoice> invoices;
+	private Set<InvoiceLines> invoiceLines;
+	
+	@OneToMany(mappedBy = "gameList")
+	@JsonIgnore
+	private Set<Invoice> invoice;
 	
 	public GameList() {
 		super();

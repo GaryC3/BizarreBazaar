@@ -2,6 +2,8 @@ package com.bb.spring.beans;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -11,10 +13,9 @@ import javax.persistence.Table;
 @Table(name="InvoiceLines")
 public class InvoiceLines {
 	
-	@Id
-	@Column(name ="UserId")
-	private int user_id;
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name ="line_id")
 	private int line_id;
 	
@@ -24,9 +25,9 @@ public class InvoiceLines {
 	@Column(name="Price")
 	private double price;
 	
-//	@ManyToOne // DO NOT use Eager unless you 100% ALWAYS need the child record
-//	@JoinColumn(name = "Invoice_Id")
-//	private Invoice invoice;
+	@ManyToOne // DO NOT use Eager unless you 100% ALWAYS need the child record
+	@JoinColumn(name = "gameid")
+	private GameList gameList;
 
 	@ManyToOne // DO NOT use Eager unless you 100% ALWAYS need the child record
 	@JoinColumn(name = "id")
@@ -36,20 +37,13 @@ public class InvoiceLines {
 		super();
 	}
 
-	public InvoiceLines(int user_id, int line_id, int invoice_id, String title, double price) {
+	public InvoiceLines(int line_id, int gameid, String title, double price, GameList gameList, UserList userList) {
 		super();
-		this.user_id = user_id;
 		this.line_id = line_id;
 		this.title = title;
 		this.price = price;
-	}
-
-	public int getUser_id() {
-		return user_id;
-	}
-
-	public void setUser_id(int user_id) {
-		this.user_id = user_id;
+		this.gameList = gameList;
+		this.userList = userList;
 	}
 
 	public int getLine_id() {
@@ -59,6 +53,7 @@ public class InvoiceLines {
 	public void setLine_id(int line_id) {
 		this.line_id = line_id;
 	}
+
 	public String getTitle() {
 		return title;
 	}
@@ -74,14 +69,13 @@ public class InvoiceLines {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	
 
-	public Invoice getInvoice() {
-		return invoice;
+	public GameList getGameList() {
+		return gameList;
 	}
 
-	public void setInvoice(Invoice invoice) {
-		this.invoice = invoice;
+	public void setGameList(GameList gameList) {
+		this.gameList = gameList;
 	}
 
 	public UserList getUserList() {
@@ -94,9 +88,10 @@ public class InvoiceLines {
 
 	@Override
 	public String toString() {
-		return "InvoiceLines [user_id=" + user_id + ", line_id=" + line_id + ", title="
-				+ title + ", price=" + price + ", invoice=" + invoice + ", userList=" + userList + "]";
+		return "InvoiceLines [line_id=" + line_id + ", title=" + title + ", price=" + price
+				+ ", gameList=" + gameList + ", userList=" + userList + "]";
 	}
+
 	
 	
 	
