@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -47,6 +48,13 @@ public class DiscountController {
 	@Transactional
 	public ResponseEntity<Discount> save(@RequestBody Discount discount){
 		return new ResponseEntity<>(discountRepo.save(discount), HttpStatus.ACCEPTED);
+	}
+	
+	@DeleteMapping("/{genre}")
+	public ResponseEntity<GameList> delete(@PathVariable String genre){
+		
+		discountRepo.deleteById(genre);
+		return ResponseEntity.noContent().build();
 	}
 
 }

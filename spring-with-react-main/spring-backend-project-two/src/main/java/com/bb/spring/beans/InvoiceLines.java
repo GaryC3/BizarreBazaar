@@ -24,9 +24,9 @@ public class InvoiceLines {
 	@Column(name="Price")
 	private double price;
 	
-	@ManyToOne // DO NOT use Eager unless you 100% ALWAYS need the child record
-	@JoinColumn(name = "Invoice_Id")
-	private Invoice invoice;
+//	@ManyToOne // DO NOT use Eager unless you 100% ALWAYS need the child record
+//	@JoinColumn(name = "Invoice_Id")
+//	private Invoice invoice;
 
 	@ManyToOne // DO NOT use Eager unless you 100% ALWAYS need the child record
 	@JoinColumn(name = "id")
