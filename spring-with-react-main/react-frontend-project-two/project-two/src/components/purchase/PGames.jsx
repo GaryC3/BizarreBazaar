@@ -19,7 +19,7 @@ export const PGames = () => {
                             <div>
                                 <div>
                                     <img class="gameSize" src="placeholder.png" alt="game" />
-                                    <input type="checkbox" id="exampleCheck1"/>
+                                    <input type="radio" value={game.gameid} id="exampleCheck1"/>
                                     <div class="list-group">
                                         <a class="text-center">Title :</a>
                                         <a class=" list-group-item-action list-group-item-secondary text-center">{game.title}</a>
