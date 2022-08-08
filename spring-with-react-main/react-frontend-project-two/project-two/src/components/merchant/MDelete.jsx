@@ -11,17 +11,15 @@ export const MDelete = () => {
 
         useEffect(() => {  
         axios.get('http://localhost:8080/gameList')
-            .then(res => {setGames(res.data)}) // sets my devs state to be that array of devs
+            .then(res => {setGames(res.data)}) // sets gamelist state to be that array of games
         }, []); 
 
         const handleDelete = async (e) =>{
             try{
                 e.preventDefault();
-                await axios.delete(`http://localhost:8080/gameList?{gameid}}`, {
-                    // first_name: firstRef.current.value,
-                    // last_name: lastRef.current.value,
-                    // email: emailRef.current.value,
-                    // password: passwordRef.current.value
+                console.log(document.getElementById('gameid').options[document.getElementById('gameid').selectedIndex].value)
+                await axios.delete(`http://localhost:8080/gameList/?{game.gameid}`, {
+                    gamid: document.getElementById('gameid').options[document.getElementById('gameid').selectedIndex].value
                 });
             }catch(err){
                 console.log(err); 
@@ -46,10 +44,10 @@ export const MDelete = () => {
         
         <div class="input-group mb-3 long">
         <select class="form-control bg-light" searchable="Search here..">
-        <option value="" disabled selected>Select Game</option>
+        <option disabled selected>Select Game</option>
         {games.map((game, i, e) =>{
                     return(
-                         <option value="game" ref={titleRef}>{game.title}</option> 
+                         <option id='gameid' value={game.gameid} key={game.gameid} ref={gameid}>{game.gameid}{game.title}</option> 
                         
                          
                     )
@@ -60,7 +58,7 @@ export const MDelete = () => {
             
         </div>
         <div class= "input-group mb-3 long3">
-            <button class="btn btn-primary active button1" type="button" /*onClick={handleDelete}*/>Delete</button>
+            <button class="btn btn-primary active button1" type="button" onClick={handleDelete}>Delete</button>
 
             <button class="btn btn-primary active button1" type="button" /*onClick={handleUpdate}*/>Update</button>
         </div>    

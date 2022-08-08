@@ -32,7 +32,7 @@ public class DiscountController {
 		return discountRepo.findAll();
 	}
 	
-	@PutMapping("/{discount}")
+	@PutMapping("/{genre}")
 	public Discount save(@RequestBody Discount discount, @PathVariable String genre) {
 		System.out.println(genre);
 		if(discountRepo.existsById(genre)) {
