@@ -26,7 +26,7 @@ insert into discount (genre, discount) values ('roleplaying', 0.26);
 insert into discount (genre, discount) values ('strategy', 0.99);
 
 
-insert into userlist (first_name, last_name, email, password, role) values ('Ezri', 'Seathwright', 'admin@admin.com', '$2a$12$APrrI8gR9Pqqv7muhVYYPeeCac7yTAKkZltv7MZHPmNbNtTwTh/Qe', 'ADMIN');
+insert into userlist (first_name, last_name, email, password, role) values ('Ezri', 'Seathwright', 'admin@admin.com', '$2a$10$16RH8.8.AsmgXIBhE4RBg.pcwYCNWR50ELVCvt7tYWxYLUpyYYmuG', 'admin');
 insert into userlist (first_name, last_name, email, password, role) values ('Garwood', 'Pether', 'gpether1@ibm.com', 'yd0FX6', 'user');
 insert into userlist (first_name, last_name, email, password, role) values ('Astrid', 'Crimes', 'acrimes2@so-net.ne.jp', 't0D52ifWJ8', 'user');
 insert into userlist (first_name, last_name, email, password, role) values ('Isidoro', 'Renackowna', 'irenackowna3@cbsnews.com', 'GffzajGB2', 'user');

@@ -5,6 +5,7 @@ import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
@@ -35,9 +36,9 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 	}
 	
 	
-//	@Autowired // Spring Data JPA should have a datasource already
+	@Autowired // Spring Data JPA should have a datasource already
 //	private DataSource datasource;
-//	
+////	
 //	@Autowired
 //	private PasswordEncoder passwordEncoder;
 	
@@ -58,35 +59,34 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		
-		http.authorizeRequests()
-			.antMatchers("/**") // goes to default or home page
-			.permitAll()  // no credentials needed for for page
-//			.antMatchers("/signup")
-//			.permitAll()	// all users can go to sign up
-//			.antMatchers("/ownedgames") //gamelist only accessible by role user, note might have to do /pagename from frontend
-//			.hasAuthority("user")
-//			.antMatchers("/purchase") //gamelist only accessible by role user, note might have to do /pagename from frontend
-//			.hasAuthority("user")
-//			.antMatchers("/confirmation") //gamelist only accessible by role user, note might have to do /pagename from frontend
-//			.hasAuthority("user")
+//		http.authorizeRequests()
+//			.antMatchers("/") // goes to default or home page
+//			.permitAll()  // no credentials needed for for page
 //			.antMatchers("/userlist")
+//			.permitAll()	// all users can go to sign up
+//			.antMatchers("/gameList") //gamelist only accessible by role user, note might have to do /pagename from frontend not sure will have to test!!
 //			.hasAuthority("admin")
-//			.antMatchers("/merchant")
-//			.hasAuthority("admin") // only admin has access to merchant page
+//			.antMatchers("/confirmation") 
+//			.hasAuthority("USER")
+//			.antMatchers("/**")
+//			.hasAuthority("ADMIN") // only admin has access to merchant page TEST IT
+//			.antMatchers(HttpMethod.POST)
+//			.permitAll()
 //			.anyRequest()
-//			.hasAnyRole("admin", "user")
-			.and()
-			.httpBasic();
+//			.hasAnyRole()
+//			.and()
+//			.httpBasic();
+		
 			
 //		http.csrf().disable().httpBasic(); // not-prod
-//		http.authorizeRequests().mvcMatchers("/login-check").hasAnyRole("user");
-//		http.authorizeRequests().mvcMatchers("/gameList/**").hasAnyRole("user");
-//		http.authorizeRequests().mvcMatchers("/**").hasAnyRole("user");
+//		http.authorizeRequests().mvcMatchers("/login-check").permitAll();
+//		http.authorizeRequests().mvcMatchers("/gameList/").hasAnyRole("user");
+//		http.authorizeRequests().mvcMatchers("/**").hasAnyRole("admin");
 //		http.authorizeRequests().mvcMatchers("/invoice/**").hasAnyRole("user");
 //		http.authorizeRequests().mvcMatchers("/invoicelines/**").hasAnyRole("user");
-//		http.authorizeRequests().mvcMatchers("/**").permitAll();
-//		http.authorizeRequests().anyRequest().permitAll();
-//		http.logout().deleteCookies("custom-cookie").invalidateHttpSession(false); // POST /logout
+		http.authorizeRequests().mvcMatchers().permitAll();
+		http.authorizeRequests().anyRequest().permitAll();
+		http.logout().deleteCookies("custom-cookie").invalidateHttpSession(false); // POST /logout
 		// CSRF - 
 		// 1. login to Bank of America (session, cookie)
 		// 2. hacker send you an email with link
