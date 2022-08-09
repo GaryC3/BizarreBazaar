@@ -15,10 +15,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bb.spring.beans.Invoice;
+import com.bb.spring.beans.GameList;
 import com.bb.spring.beans.InvoiceLines;
+import com.bb.spring.beans.UserList;
 import com.bb.spring.repositories.InvoiceLineRepo;
-import com.bb.spring.repositories.InvoiceRepo;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 
 @CrossOrigin(origins = "http://localhost:3000")
@@ -29,19 +29,23 @@ public class InvoiceLinesController {
 	@Autowired
 	private InvoiceLineRepo invoiceLineRepo;
 	
-	@Autowired
-	private InvoiceRepo invoiceRepo;
-	
 	@GetMapping
-	public List<Invoice> getInvoice(@RequestBody ObjectNode node){
+	public List<InvoiceLines> getInvoice(@RequestBody ObjectNode node){
 		int userid = node.get("id").asInt();
-		 return invoiceRepo.findByUserId(userid);
+		return invoiceLineRepo.findByUserId(userid);
 	}
 	
 	@PostMapping
 	@Transactional
-	public ResponseEntity<InvoiceLines> save(@RequestBody InvoiceLines invoiceLine){
-		return new ResponseEntity<>(invoiceLineRepo.save(invoiceLine), HttpStatus.CREATED);
+	public ResponseEntity<InvoiceLines> saveOrDeleteIfExists(@RequestBody InvoiceLines invoiceLine){
+		List<InvoiceLines> check = invoiceLineRepo.getByUserAndGame(invoiceLine.getUserList().getId(), invoiceLine.getGameList().getGameid());
+		if(!check.isEmpty()) {
+			invoiceLineRepo.deleteById(check.get(0).getLine_id());
+			return ResponseEntity.noContent().build();
+		}
+		else {
+			return new ResponseEntity<>(invoiceLineRepo.save(invoiceLine), HttpStatus.CREATED);
+		}
 	}
 	
 	@DeleteMapping("/{userid}")
@@ -50,4 +54,16 @@ public class InvoiceLinesController {
 		invoiceLineRepo.deleteByUserId(realuserid);
 		return ResponseEntity.noContent().build();
 	}
+	
+//	@DeleteMapping("/test")
+//	public ResponseEntity<InvoiceLines> deleteIfExistsElseAdd(@RequestBody InvoiceLines invoiceLine){
+//		List<InvoiceLines> check = invoiceLineRepo.getByUserAndGame(invoiceLine.getUserList().getId(), invoiceLine.getGameList().getGameid());
+//		if(!check.isEmpty()) {
+//			invoiceLineRepo.deleteById(check.get(0).getLine_id());
+//			return ResponseEntity.noContent().build();
+//		}
+//		else {
+//			return new ResponseEntity<>(invoiceLineRepo.save(invoiceLine), HttpStatus.CREATED);
+//		}
+//	}
 }
