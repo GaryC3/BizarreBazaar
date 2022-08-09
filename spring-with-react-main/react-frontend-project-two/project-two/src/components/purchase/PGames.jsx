@@ -9,6 +9,19 @@ export const PGames = () => {
             .then(res => {setGames(res.data)}) // sets my devs state to be that array of devs
         }, []); 
 
+        const handleAdd = async (e) =>{
+            try{
+                e.preventDefault(); 
+                console.log(document.getElementById('gameid').options[document.getElementById('gameid').selectedIndex].value)
+                temp = document.getElementById('gameid').options[document.getElementById('gameid').selectedIndex].value;
+                await axios.delete(`http://localhost:8080/gameList/${temp}`);
+                console.log("pass"); 
+            }catch(err){
+                console.log("fail"); 
+                console.log(err); 
+            }
+        }
+
 
     return(
         <> 
@@ -19,7 +32,7 @@ export const PGames = () => {
                             <div>
                                 <div>
                                     <img class="gameSize" src="placeholder.png" alt="game" />
-                                    <input type="radio" value={game.gameid} id="exampleCheck1"/>
+                                    <input type="radio" value={game.gameid} id="exampleCheck1" onClick={handleAdd}/>
                                     <div class="list-group">
                                         <a class="text-center">Title :</a>
                                         <a class=" list-group-item-action list-group-item-secondary text-center">{game.title}</a>
