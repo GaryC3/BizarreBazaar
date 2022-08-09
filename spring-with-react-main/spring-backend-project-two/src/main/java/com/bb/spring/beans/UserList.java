@@ -38,6 +38,9 @@ public class UserList {
 	@Column(name="password")
 	private String password;
 	
+	@Column(name="role")
+	private String role;
+	
 	@OneToMany(mappedBy = "userList")
 	@JsonIgnore
 	private Set<InvoiceLines> invoiceLines;
@@ -52,13 +55,14 @@ public class UserList {
 	}
 
 	public UserList(int id, @NotBlank String first_name, @NotBlank String last_name, @Email String email,
-			String password, Set<InvoiceLines> invoiceLines, Set<Invoice> invoice) {
+			String password, String role, Set<InvoiceLines> invoiceLines, Set<Invoice> invoice) {
 		super();
 		this.id = id;
 		this.first_name = first_name;
 		this.last_name = last_name;
 		this.email = email;
 		this.password = password;
+		this.role = role;
 		this.invoiceLines = invoiceLines;
 		this.invoice = invoice;
 	}
@@ -89,6 +93,14 @@ public class UserList {
 
 	public String getEmail() {
 		return email;
+	}
+	
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
 	}
 
 	public void setEmail(String email) {
@@ -122,7 +134,7 @@ public class UserList {
 	@Override
 	public String toString() {
 		return "UserList [id=" + id + ", first_name=" + first_name + ", last_name=" + last_name + ", email=" + email
-				+ ", password=" + password + ", invoiceLines=" + invoiceLines + ", invoice=" + invoice + "]";
+				+ ", password=" + password + ", role=" + role +", invoiceLines=" + invoiceLines + ", invoice=" + invoice + "]";
 	}
 
 	

@@ -6,18 +6,35 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.AuthenticationProvider;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.JdbcUserDetailsManager;
 
 @Configuration
+@EnableWebSecurity
 //@EnableGlobalMethodSecurity  // role-based access control (RBAC) to methods.. not just URL
 public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
-
+	
+	@Autowired
+	private UserDetailsService userDetailsService;
+	
+	@Bean
+	AuthenticationProvider authenticationProvider() {
+		DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
+		provider.setUserDetailsService(userDetailsService);
+		provider.setPasswordEncoder(new BCryptPasswordEncoder());
+		return provider;
+	}
+	
+	
 //	@Autowired // Spring Data JPA should have a datasource already
 //	private DataSource datasource;
 //	
@@ -40,14 +57,36 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.csrf().disable().httpBasic(); // not-prod
-//		http.authorizeRequests().mvcMatchers("/login-check").hasAnyRole("USER");
-//		http.authorizeRequests().mvcMatchers("/artist/**").hasAnyRole("USER");
-//		http.authorizeRequests().mvcMatchers("/album/**").hasAnyRole("ADMIN");
-//		http.authorizeRequests().mvcMatchers("/tracks/**").hasAnyRole("ADMIN");
-		http.authorizeRequests().mvcMatchers("/**").permitAll();
-		http.authorizeRequests().anyRequest().permitAll();
-		http.logout().deleteCookies("custom-cookie").invalidateHttpSession(false); // POST /logout
+		
+		http.authorizeRequests()
+			.antMatchers("/**") // goes to default or home page
+			.permitAll()  // no credentials needed for for page
+//			.antMatchers("/signup")
+//			.permitAll()	// all users can go to sign up
+//			.antMatchers("/ownedgames") //gamelist only accessible by role user, note might have to do /pagename from frontend
+//			.hasAuthority("user")
+//			.antMatchers("/purchase") //gamelist only accessible by role user, note might have to do /pagename from frontend
+//			.hasAuthority("user")
+//			.antMatchers("/confirmation") //gamelist only accessible by role user, note might have to do /pagename from frontend
+//			.hasAuthority("user")
+//			.antMatchers("/userlist")
+//			.hasAuthority("admin")
+//			.antMatchers("/merchant")
+//			.hasAuthority("admin") // only admin has access to merchant page
+//			.anyRequest()
+//			.hasAnyRole("admin", "user")
+			.and()
+			.httpBasic();
+			
+//		http.csrf().disable().httpBasic(); // not-prod
+//		http.authorizeRequests().mvcMatchers("/login-check").hasAnyRole("user");
+//		http.authorizeRequests().mvcMatchers("/gameList/**").hasAnyRole("user");
+//		http.authorizeRequests().mvcMatchers("/**").hasAnyRole("user");
+//		http.authorizeRequests().mvcMatchers("/invoice/**").hasAnyRole("user");
+//		http.authorizeRequests().mvcMatchers("/invoicelines/**").hasAnyRole("user");
+//		http.authorizeRequests().mvcMatchers("/**").permitAll();
+//		http.authorizeRequests().anyRequest().permitAll();
+//		http.logout().deleteCookies("custom-cookie").invalidateHttpSession(false); // POST /logout
 		// CSRF - 
 		// 1. login to Bank of America (session, cookie)
 		// 2. hacker send you an email with link
