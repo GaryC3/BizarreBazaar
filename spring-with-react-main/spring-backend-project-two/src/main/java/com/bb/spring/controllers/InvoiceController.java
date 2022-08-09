@@ -14,10 +14,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bb.spring.beans.Invoice;
-import com.bb.spring.beans.UserList;
 import com.bb.spring.repositories.GameListRepo;
 import com.bb.spring.repositories.InvoiceRepo;
 import com.bb.spring.repositories.UserListRepo;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 
 
 @CrossOrigin(origins = "http://localhost:3000")
@@ -38,14 +38,9 @@ public class InvoiceController {
 	
 	// get by id to hold the game selected to buy from the front end
 	@GetMapping
-	public /*List<GameList>*/List<Invoice> getInvoice(@RequestBody UserList userList){
-		 List<Invoice> temp = invoiceRepo.findByUserId(userList.getId());
-		 return temp;
-		 ////////////////////////////////////////////////////////////STIL NEED WORK!!!!!!!!!!!!!!!!!!////////////////////////////////////////////////
-		 /////////////////////////////////////////////////////////////////////STIL NEED WORK!!!!!!!!!!!!!!!!!!/////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////STIL NEED WORK!!!!!!!!!!!!!!!!!!/////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////STIL NEED WORK!!!!!!!!!!!!!!!!!!/////////////////////////////////////////////////////////
-			
+	public List<Invoice> getInvoice(@RequestBody ObjectNode node){
+		int userid = node.get("id").asInt();
+		 return invoiceRepo.findByUserId(userid);
 	}
 	
 	@PostMapping

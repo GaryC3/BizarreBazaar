@@ -19,6 +19,7 @@ import com.bb.spring.beans.InvoiceLines;
 import com.bb.spring.repositories.GameListRepo;
 import com.bb.spring.repositories.InvoiceLineRepo;
 import com.bb.spring.repositories.InvoiceRepo;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
@@ -35,8 +36,12 @@ public class InvoiceLinesController {
 	private GameListRepo gameListRepo;
 	
 	@GetMapping
-	public List<GameList> getGameList(){
-		return gameListRepo.findAll();
+//	public List<GameList> getGameList(){
+//		return gameListRepo.findAll();
+//	}
+	public List<Invoice> getInvoice(@RequestBody ObjectNode node){
+		int userid = node.get("id").asInt();
+		 return invoiceRepo.findByUserId(userid);
 	}
 	
 	@PostMapping
