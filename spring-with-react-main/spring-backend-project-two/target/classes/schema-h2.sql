@@ -17,8 +17,21 @@ create table userlist (
 	first_name VARCHAR(50),
 	last_name VARCHAR(50),
 	email VARCHAR(50),
-	password VARCHAR(50)
+	password VARCHAR(50) not null
 );
+
+create table users (
+	username varchar_ignorecase(50) not null primary key,
+	password varchar_ignorecase(50) not null,
+	enabled boolean not null
+);
+
+create table authorities (
+	username varchar_ignorecase(50) not null,
+	authority varchar_ignorecase(50) not null,
+	constraint fk_authorities_users foreign key(username) references users(username)
+);
+create unique index ix_auth_username on authorities (username, authority);
 
 create table invoice (
 	invoice_id INT auto_increment,

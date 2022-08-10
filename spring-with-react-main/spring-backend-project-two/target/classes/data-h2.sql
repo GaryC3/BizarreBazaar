@@ -26,8 +26,8 @@ insert into discount (genre, discount) values ('roleplaying', 0.26);
 insert into discount (genre, discount) values ('strategy', 0.99);
 
 
-insert into userlist (first_name, last_name, email, password) values ('Ezri', 'Seathwright', 'eseathwright0@utexas.edu', '5s1UvZn0mm7P');
-insert into userlist (first_name, last_name, email, password) values ('Garwood', 'Pether', 'gpether1@ibm.com', 'yd0FX6');
+insert into userlist (first_name, last_name, email, password) values ('Ezri', 'Seathwright', 'eseathwright0@utexas.edu', 'passs');
+insert into userlist (first_name, last_name, email, password) values ('Garwood', 'Pether', 'gpether1@ibm.com', 'passsss');
 insert into userlist (first_name, last_name, email, password) values ('Astrid', 'Crimes', 'acrimes2@so-net.ne.jp', 't0D52ifWJ8');
 insert into userlist (first_name, last_name, email, password) values ('Isidoro', 'Renackowna', 'irenackowna3@cbsnews.com', 'GffzajGB2');
 insert into userlist (first_name, last_name, email, password) values ('Padgett', 'Walsh', 'pwalsh4@360.cn', 'jWMUJVh1X');
@@ -41,3 +41,10 @@ insert into userlist (first_name, last_name, email, password) values ('Giraud', 
 insert into userlist (first_name, last_name, email, password) values ('Jacenta', 'Rumble', 'jrumblec@naver.com', 'KvDEDhu9Kig');
 insert into userlist (first_name, last_name, email, password) values ('Arabele', 'Karolczyk', 'akarolczykd@t-online.de', 'pADEkOrY3');
 insert into userlist (first_name, last_name, email, password) values ('Nolan', 'Salzberg', 'nsalzberge@toplist.cz', 'XrMvJi');
+
+insert into users (username, password, enabled) values ('admin', 'admin', 'true');
+insert into users (username, password, enabled) values ('user', 'user', 'true');
+
+insert into authorities (username, authority) values ('admin', 'ROLE_ADMIN');
+insert into authorities (username, authority) values ('user', 'ROLE_USER');
+
