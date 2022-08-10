@@ -112,6 +112,14 @@ code {
   padding-right: 200px;
   position: relative;
 }
+.space-up {
+  padding-top: 20px;
+  margin-left: 360px;
+  margin-right: 360px;
+  font-size: 45px;
+  border: 2px solid black;
+  position: relative;
+}
 #container {
    margin: 20px; 
   

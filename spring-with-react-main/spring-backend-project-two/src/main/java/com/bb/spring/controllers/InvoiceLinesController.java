@@ -29,10 +29,10 @@ public class InvoiceLinesController {
 	@Autowired
 	private InvoiceLineRepo invoiceLineRepo;
 	
-	@GetMapping
-	public List<InvoiceLines> getInvoice(@RequestBody ObjectNode node){
-		int userid = node.get("id").asInt();
-		return invoiceLineRepo.findByUserId(userid);
+	@GetMapping("/{userid}")
+	public List<InvoiceLines> getInvoice(@PathVariable String userid){
+		int realuserid = Integer.parseInt(userid);
+		return invoiceLineRepo.findByUserId(realuserid);
 	}
 	
 	@PostMapping
@@ -54,16 +54,4 @@ public class InvoiceLinesController {
 		invoiceLineRepo.deleteByUserId(realuserid);
 		return ResponseEntity.noContent().build();
 	}
-	
-//	@DeleteMapping("/test")
-//	public ResponseEntity<InvoiceLines> deleteIfExistsElseAdd(@RequestBody InvoiceLines invoiceLine){
-//		List<InvoiceLines> check = invoiceLineRepo.getByUserAndGame(invoiceLine.getUserList().getId(), invoiceLine.getGameList().getGameid());
-//		if(!check.isEmpty()) {
-//			invoiceLineRepo.deleteById(check.get(0).getLine_id());
-//			return ResponseEntity.noContent().build();
-//		}
-//		else {
-//			return new ResponseEntity<>(invoiceLineRepo.save(invoiceLine), HttpStatus.CREATED);
-//		}
-//	}
 }

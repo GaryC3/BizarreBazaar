@@ -1,8 +1,11 @@
+import {back} from "../components"
+import {cart} from "../components"
 export const Confirmation = () => {
     return(
         <>
-        
-        <h1>5</h1>
+        <back.Back/>
+        <h1 className="text-center title">CART</h1>
+        <cart.CGames/>
         </>
     );
 }
