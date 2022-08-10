@@ -25,13 +25,6 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 @RequestMapping("invoice")
 public class InvoiceController {
 	
-	
-	@Autowired
-	private GameListRepo gameListRepo; 
-	
-	@Autowired
-	private UserListRepo userListRepo; 
-	
 	@Autowired
 	private InvoiceRepo invoiceRepo;
 	
