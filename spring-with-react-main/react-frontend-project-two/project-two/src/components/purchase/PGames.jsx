@@ -5,7 +5,7 @@ export const PGames = () => {
     const[games, setGames] = useState([]);
 
         useEffect(() => {  
-            axios.get('http://localhost:8080/gameList').then(res => {setGames(res.data)}) 
+            axios.get('http://localhost:8080/gameList/1').then(res => {setGames(res.data)}) 
             axios.delete(`http://localhost:8080/invoicelines/1`)////////////////////////////////
             /////////////////////////////////////////////////^////////
             ////////////////////////////////////////////////^^^///////
