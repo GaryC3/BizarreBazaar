@@ -4,11 +4,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import com.bb.spring.beans.User;
+import com.bb.spring.repositories.UserListRepo;
 import com.bb.spring.repositories.UserRepository;
 
 @SpringBootApplication
+@EnableJpaRepositories(basePackageClasses = UserListRepo.class)
 public class SpringBackendProjectTwoApplication implements CommandLineRunner {
 
 	public static void main(String[] args) {

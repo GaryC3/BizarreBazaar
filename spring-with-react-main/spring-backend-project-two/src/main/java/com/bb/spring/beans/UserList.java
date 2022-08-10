@@ -15,7 +15,7 @@ import javax.validation.constraints.NotBlank;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-@Table(name="UserList")
+@Table(name="userlist")
 public class UserList {
 	
 	@Id
@@ -35,8 +35,20 @@ public class UserList {
 	@Email
 	private String email;
 	
+	@Column(name="username")
+	@NotBlank
+	private String username;
+	
 	@Column(name="password")
+	@NotBlank
 	private String password;
+	
+	@Column(name="active")
+	private Boolean active;
+	
+	@Column(name="roles")
+	private String roles;
+	
 	
 	@OneToMany(mappedBy = "userList")
 	@JsonIgnore
@@ -52,7 +64,7 @@ public class UserList {
 	}
 
 	public UserList(int id, @NotBlank String first_name, @NotBlank String last_name, @Email String email,
-			String password, Set<InvoiceLines> invoiceLines, Set<Invoice> invoice) {
+			String username, String password, Boolean active, String roles, Set<InvoiceLines> invoiceLines, Set<Invoice> invoice) {
 		super();
 		this.id = id;
 		this.first_name = first_name;
@@ -61,6 +73,33 @@ public class UserList {
 		this.password = password;
 		this.invoiceLines = invoiceLines;
 		this.invoice = invoice;
+		this.username = username;
+		this.active = active;
+		this.roles = roles;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public Boolean getActive() {
+		return active;
+	}
+
+	public void setActive(Boolean active) {
+		this.active = active;
+	}
+
+	public String getRoles() {
+		return roles;
+	}
+
+	public void setRoles(String role) {
+		this.roles = role;
 	}
 
 	public int getId() {
@@ -122,7 +161,8 @@ public class UserList {
 	@Override
 	public String toString() {
 		return "UserList [id=" + id + ", first_name=" + first_name + ", last_name=" + last_name + ", email=" + email
-				+ ", password=" + password + ", invoiceLines=" + invoiceLines + ", invoice=" + invoice + "]";
+				+ ", username=" + username +", password=" + password + ", role=" + roles +", invoiceLines="
+				+ invoiceLines + ", invoice=" + invoice + "]";
 	}
 
 	
