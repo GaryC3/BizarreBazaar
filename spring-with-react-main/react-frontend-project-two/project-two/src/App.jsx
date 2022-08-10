@@ -3,7 +3,7 @@ import './App.css';
 import React from "react";
 import { BrowserRouter, Route, Routes} from "react-router-dom";
 
-import { Home, Merchant, Purchase, Confirmation, SignUp, OwnedGames} from "./pages";
+import { Home, Merchant, Purchase, Confirmation, SignUp, SignIn, OwnedGames} from "./pages";
 
 
 export const App = () => {
@@ -18,6 +18,7 @@ export const App = () => {
             <Route path="purchase" element={<Purchase />} />
             <Route path="/confirmation" element={<Confirmation />} />
             <Route path="/sign" element={<SignUp />} />
+            <Route path="/sign2" element={<SignIn />} />
             <Route path="/owned" element={<OwnedGames />} /> 
           </Routes>
         </BrowserRouter>

@@ -4,3 +4,4 @@ export * from './Merchant';
 export * from './OwnedGames';
 export * from './Purchase';
 export * from './SignUp';
+export * from './SignIn';
