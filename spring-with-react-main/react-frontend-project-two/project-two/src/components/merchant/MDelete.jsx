@@ -1,11 +1,8 @@
 import axios from "axios";
-import { useRef, useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 export const MDelete = () => {
 
-    const titleRef = useRef();
-    const quantity = useRef();
-    const gameid = useRef(); 
     var temp;
     
     const[games, setGames] = useState([]);
@@ -17,30 +14,26 @@ export const MDelete = () => {
 
         const handleDelete = async (e) =>{
             try{
-                e.preventDefault(); 
                 console.log(document.getElementById('gameid').options[document.getElementById('gameid').selectedIndex].value)
                 temp = document.getElementById('gameid').options[document.getElementById('gameid').selectedIndex].value;
                 await axios.delete(`http://localhost:8080/gameList/${temp}`);
-                console.log("pass"); 
-            }catch(err){
-                console.log("fail"); 
-                console.log(err); 
-            }
-        }
-        const handleUpdate = async (e) =>{
-            try{
-                e.preventDefault();
-                await axios.put(`http://localhost:8080/gameList}`, {
-                    // first_name: firstRef.current.value,
-                    // last_name: lastRef.current.value,
-                    // email: emailRef.current.value,
-                    // password: passwordRef.current.value
-                });
+                window.location.reload();
             }catch(err){
                 console.log(err); 
             }
         }
-        console.log()
+        // const handleUpdate = async (e) =>{
+        //     try{
+        //         await axios.put(`http://localhost:8080/gameList}`, {
+        //             // first_name: firstRef.current.value,
+        //             // last_name: lastRef.current.value,
+        //             // email: emailRef.current.value,
+        //             // password: passwordRef.current.value
+        //         });
+        //     }catch(err){
+        //         console.log(err); 
+        //     }
+        // }
     return(
         <>
         

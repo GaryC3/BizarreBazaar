@@ -44,7 +44,6 @@ export const MDiscount = () => {
 
     const handleSubmit = async (e) =>{
         try{
-            e.preventDefault();
             const {data} = await axios.post(`http://localhost:8080/discount`, {
                 genre: genreRef.current.value,
                 discount: discountRef.current.value

@@ -4,14 +4,12 @@ import { useRef } from 'react';
 export const SSigning2 = () => {
     
     const firstRef = useRef();
-    const lastRef = useRef();
-    const emailRef = useRef();
     const passwordRef = useRef();
 
     const handleSubmit = async (e) =>{
         try{
             e.preventDefault();
-            await axios.post(`http://localhost:8080/userlist`, {
+            await axios.get(`http://localhost:8080/userlist`, {
                 first_name: firstRef.current.value,
                 password: passwordRef.current.value
             });

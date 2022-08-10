@@ -8,12 +8,10 @@ export const MNew = () => {
     const priceRef = useRef();
     const quantityRef = useRef();
     const descriptionRef = useRef();
-    var select;
+    // var select;
 
     const handleSubmit = async (e) =>{
         try{
-            e.preventDefault();
-
             await axios.post(`http://localhost:8080/gameList`, {
 
                 title: titleRef.current.value,
@@ -31,6 +29,7 @@ export const MNew = () => {
             priceRef.current.value = null;
             quantityRef.current.value = null;
             genreRef.current.value = null;
+
 
         }catch(err){
             console.log(err);
