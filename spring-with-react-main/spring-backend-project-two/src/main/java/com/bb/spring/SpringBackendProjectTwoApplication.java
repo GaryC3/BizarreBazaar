@@ -11,7 +11,6 @@ import com.bb.spring.repositories.UserListRepo;
 import com.bb.spring.repositories.UserRepository;
 
 @SpringBootApplication
-@EnableJpaRepositories(basePackageClasses = UserListRepo.class)
 public class SpringBackendProjectTwoApplication implements CommandLineRunner {
 
 	public static void main(String[] args) {

@@ -35,10 +35,10 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		// set up authorization for api
 		http.authorizeHttpRequests()
-			.antMatchers("/admin").hasRole("ADMIN")
-			.antMatchers("/user").hasAnyRole("ADMIN", "USER")
-			.antMatchers("/**").permitAll() // root, everyone can go to root/home page
-			.and().formLogin();
+//			.antMatchers("/admin").hasRole("ADMIN")
+//			.antMatchers("/user").hasAnyRole("ADMIN", "USER")
+			.antMatchers("/**").permitAll(); // root, everyone can go to root/home page
+//			.and().formLogin();
 	}
 	
 	@Bean

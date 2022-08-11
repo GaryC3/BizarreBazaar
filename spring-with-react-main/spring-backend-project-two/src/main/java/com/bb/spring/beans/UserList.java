@@ -161,9 +161,11 @@ public class UserList {
 	@Override
 	public String toString() {
 		return "UserList [id=" + id + ", first_name=" + first_name + ", last_name=" + last_name + ", email=" + email
-				+ ", username=" + username +", password=" + password + ", role=" + roles +", invoiceLines="
-				+ invoiceLines + ", invoice=" + invoice + "]";
+				+ ", username=" + username + ", password=" + password + ", active=" + active + ", roles=" + roles
+				+ ", invoiceLines=" + invoiceLines + ", invoice=" + invoice + "]";
 	}
+
+	
 
 	
 
