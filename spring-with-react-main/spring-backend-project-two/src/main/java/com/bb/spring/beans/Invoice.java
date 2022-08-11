@@ -17,12 +17,12 @@ import javax.validation.constraints.PositiveOrZero;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-@Table(name="Invoice")
+@Table(name="invoice")
 public class Invoice {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "Invoice_Id")
+	@Column(name = "invoice_id")
 	private int invoice_id;
 	
 //	@OneToMany(mappedBy = "invoice")

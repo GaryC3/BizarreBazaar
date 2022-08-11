@@ -11,15 +11,15 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-@Table(name="Discount")
+@Table(name="discount")
 public class Discount {
 	
 	@Id
-	@Column(name="Genre")
+	@Column(name="genre")
 	@javax.validation.constraints.NotNull
 	private String genre;
 	
-	@Column(name="Discount")
+	@Column(name="discount")
 	@javax.validation.constraints.PositiveOrZero
 	private double discount;
 

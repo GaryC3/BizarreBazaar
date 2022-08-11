@@ -18,31 +18,31 @@ import javax.validation.executable.ValidateOnExecution;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-@Table(name="GameList")
+@Table(name="gamelist")
 public class GameList {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="GameId")
+	@Column(name="gameid")
 	private int gameid;
 	
-	@Column(name="Title")
+	@Column(name="title")
 	@NotBlank
 	private String title;
 	
-	@Column(name="Description")
+	@Column(name="description")
 	private String description;
 	
-	@Column(name="Price")
+	@Column(name="price")
 	@PositiveOrZero
 	private double price;
 	
-	@Column(name="Inventory")
+	@Column(name="inventory")
 	@PositiveOrZero
 	private int inventory;
 	
 	@ManyToOne // DO NOT use Eager unless you 100% ALWAYS need the child record
-	@JoinColumn(name = "Genre")
+	@JoinColumn(name = "genre")
 	private Discount discount;
 	
 	@OneToMany(mappedBy = "gameList")
