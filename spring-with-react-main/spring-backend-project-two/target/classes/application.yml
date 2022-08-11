@@ -1,8 +1,9 @@
 # in profile
 spring:  
-  sql:
-    init:
-      platform: h2 
+  datasource:
+    url: jdbc:mysql://localhost:3306/mockproject2
+    username: root
+    password: G3a3r3y3
   jpa:
     show-sql: true
     hibernate:
