@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 export const MNew = () => {
 
@@ -9,6 +9,11 @@ export const MNew = () => {
     const quantityRef = useRef();
     const descriptionRef = useRef();
     // var select;
+    const[discount, setDiscount] = useState([]);
+    useEffect(() => {  
+        axios.get('http://localhost:8080/discount')
+            .then(res => {setDiscount(res.data)}) // sets gamelist state to be that array of games
+        }, []); 
 
     const handleSubmit = async (e) =>{
         try{
@@ -23,13 +28,13 @@ export const MNew = () => {
                 }
 
             });
-
+            window.location.reload(false);
             titleRef.current.value = null;
             descriptionRef.current.value = null;
             priceRef.current.value = null;
             quantityRef.current.value = null;
             genreRef.current.value = null;
-
+            
 
         }catch(err){
             console.log(err);
@@ -44,10 +49,12 @@ export const MNew = () => {
             {/* <input type="text" class="form-control bg-light" placeholder="Genre" aria-label="genre" id="genre" ref={genreRef} required /> */}
             <select class="form-control bg-light" searchable="Search here.." name="genre" id="genre">
                 <option id="genre" required value="" disabled selected>Select Genre</option>
-                <option value="action">Action</option>
-                <option value="adventure">Adventure</option>
-                <option value="roleplaying">Roleplaying</option>
-                <option value="strategy">Strategy</option>
+                {discount.map((discount, i, e) =>{
+                    return(
+                         <option value={discount.genre}>{discount.genre}</option> 
+                    )
+                }
+                )}
             </select>
             <input type="number" class="form-control bg-light" placeholder="Price" ara-label="price" id="price" ref={priceRef} required  />
             <input type="number" class="form-control bg-light" placeholder="Quantity" ara-label="quantity" id="quantity" ref={quantityRef} required />

@@ -49,7 +49,8 @@ export const MDiscount = () => {
                 discount: discountRef.current.value
                 
             });
-            setDiscount([discountdata, data]);
+            window.location.reload(false);
+            //setDiscount([discountdata, data]);
             // setDiscount([...discountdata, data]);
             // firstRef.current.value = null;
             // lastRef.current.value = null;
