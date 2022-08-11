@@ -24,9 +24,13 @@ public class UserListController {
 	@Autowired
 	private UserListRepo userListRepo;
 	
+//	@GetMapping
+//	public List<UserList> getUserList(){
+//		return userListRepo.findAll();
+//	}
 	@GetMapping
-	public List<UserList> getUserList(){
-		return userListRepo.findAll();
+	public String getUserList(){
+		return ("<h1>Welcome</h1>");
 	}
 	
 	@PostMapping

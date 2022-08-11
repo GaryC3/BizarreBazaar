@@ -25,7 +25,7 @@ public class UserList {
 	
 	@Column(name="first_name")
 	@NotBlank
-	private String first_name;
+	private String name;
 	
 	@Column(name="last_name")
 	@NotBlank
@@ -55,7 +55,7 @@ public class UserList {
 			String password, Set<InvoiceLines> invoiceLines, Set<Invoice> invoice) {
 		super();
 		this.id = id;
-		this.first_name = first_name;
+		this.name = first_name;
 		this.last_name = last_name;
 		this.email = email;
 		this.password = password;
@@ -71,12 +71,12 @@ public class UserList {
 		this.id = id;
 	}
 
-	public String getFirst_name() {
-		return first_name;
+	public String getName() {
+		return name;
 	}
 
-	public void setFirst_name(String first_name) {
-		this.first_name = first_name;
+	public void setName(String first_name) {
+		this.name = first_name;
 	}
 
 	public String getLast_name() {
@@ -121,7 +121,7 @@ public class UserList {
 
 	@Override
 	public String toString() {
-		return "UserList [id=" + id + ", first_name=" + first_name + ", last_name=" + last_name + ", email=" + email
+		return "UserList [id=" + id + ", first_name=" + name + ", last_name=" + last_name + ", email=" + email
 				+ ", password=" + password + ", invoiceLines=" + invoiceLines + ", invoice=" + invoice + "]";
 	}
 

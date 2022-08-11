@@ -8,5 +8,5 @@ import com.bb.spring.beans.UserList;
 @Repository
 public interface UserListRepo extends JpaRepository<UserList, Integer>{
 	
-
+	UserList findByName(String name);
 }
