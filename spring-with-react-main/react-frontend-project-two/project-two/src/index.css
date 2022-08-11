@@ -11,6 +11,24 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.centerDiscTab {
+  right: 100;
+  transform: translate(500%, 0%);
+}
+.centeredDiscount {
+  
+  transform: translate(20%, 0%);
+}
+.centeredSelGame{
+ 
+  left: 45vw;
+  transform: translate(-50%, -50%);
+}
+.centeredNewGame{
+ 
+  left: 48vw;
+  transform: translate(-50%, -50%);
+}
 .long {
   margin: 45px;
   padding-bottom: 50px;

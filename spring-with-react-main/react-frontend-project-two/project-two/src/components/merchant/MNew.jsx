@@ -44,7 +44,7 @@ export const MNew = () => {
 
     return(
         <>
-        <div class="input-group mb-3 long">
+        <div class="input-group mb-3 long centeredSelGame">
             <input type="text" class="form-control bg-light" placeholder="Title" aria-label="title" id="title" ref={titleRef} required  />
             {/* <input type="text" class="form-control bg-light" placeholder="Genre" aria-label="genre" id="genre" ref={genreRef} required /> */}
             <select class="form-control bg-light" searchable="Search here.." name="genre" id="genre">
@@ -59,7 +59,7 @@ export const MNew = () => {
             <input type="number" class="form-control bg-light" placeholder="Price" ara-label="price" id="price" ref={priceRef} required  />
             <input type="number" class="form-control bg-light" placeholder="Quantity" ara-label="quantity" id="quantity" ref={quantityRef} required />
         </div>
-        <div class="input-group mb-3 longnopadding">
+        <div class="input-group mb-3 longnopadding centeredNewGame">
 
                 <div>
                     <textarea class="bg-light bigtextbox" placeholder="description" aria-label="description" id="description" ref={descriptionRef} required></textarea>

@@ -52,17 +52,14 @@ export const MDiscount = () => {
             window.location.reload(false);
             //setDiscount([discountdata, data]);
             // setDiscount([...discountdata, data]);
-            // firstRef.current.value = null;
-            // lastRef.current.value = null;
-            // emailRef.current.value = null;
-            // passwordRef.current.value = null;
         }catch(err){
             console.log(err); 
         }
     }
     return(
         <>
-        <ReactBootStrap.Table>
+        {/* <ReactBootStrap.Table> */}
+        <table >
             <tr>
                 <th>Genre</th>
                 <th>Discount</th>
@@ -118,9 +115,9 @@ export const MDiscount = () => {
                 }
                 )}
 
-            
-        </ReactBootStrap.Table>
-        <div class="input-group mb-3">
+        </table>
+        {/* </ReactBootStrap.Table> */}
+        <div class="input-group mb-3 centeredDiscount">
             <input type="text" class="bg-light long2" placeholder="Genre" aria-label="genre" ref={genreRef} required="required"  />
             
             <input type="number" class="bg-ligh long2" placeholder="Discount" ara-label="discount" required="required" ref={discountRef}/>

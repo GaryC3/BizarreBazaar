@@ -38,7 +38,7 @@ export const MDelete = () => {
         <>
         
         <div class="input-group mb-3 long">
-        <select class="form-control bg-light" searchable="Search here.." name="gameid" id="gameid">
+        <select class="form-control bg-light centeredSelGame" searchable="Search here.." name="gameid" id="gameid">
         <option disabled selected>Select Game</option>
         {games.map((game, i, e) =>{
                     return(
@@ -52,7 +52,7 @@ export const MDelete = () => {
             {/* <input type="number" class="form-control bg-light" placeholder="" ara-label="quantity" required /> */}
             
         </div>
-        <div class= "input-group mb-3 long3">
+        <div class= "input-group mb-3 long3 centeredSelGame">
             <button class="btn btn-primary active button1" type="button" onClick={handleDelete}>Delete</button>
 
             {/* <button class="btn btn-primary active button1" type="button" onClick={handleUpdate}>Update</button> */}
