@@ -16,8 +16,8 @@ public class SpringBackendProjectTwoApplication implements CommandLineRunner {
 		SpringApplication.run(SpringBackendProjectTwoApplication.class, args);
 	}
 
-	@Autowired
-	UserRepository userRepository;
+//	@Autowired
+//	UserRepository userRepository;
 
 	// CommandLineRunner provides a run method to run in our Tomcat embedded server
 	@Override
