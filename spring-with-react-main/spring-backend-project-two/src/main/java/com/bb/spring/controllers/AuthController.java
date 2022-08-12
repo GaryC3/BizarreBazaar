@@ -50,7 +50,7 @@ public class AuthController {
 			AuthResponse response = new AuthResponse(user.getEmail(), accessToken);
 			System.out.println(accessToken);
 			return ResponseEntity.ok()
-					.header(HttpHeaders.ACCESS_CONTROL_EXPOSE_HEADERS, "Authorization")
+					.header(HttpHeaders.ACCESS_CONTROL_EXPOSE_HEADERS, "Authorization" + accessToken)
 					.body(response);
 		}catch(BadCredentialsException ex) {
 			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
