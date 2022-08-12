@@ -64,7 +64,11 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 					}
 				);
 //		http.authorizeRequests().mvcMatchers("/**").permitAll(); // if this is placed below the jwttoken filter, it will not COMPILE
-		http.authorizeRequests().antMatchers("/auth/*").permitAll().anyRequest().authenticated();
+		http.authorizeRequests()
+		.antMatchers("/auth/**").permitAll()
+		.antMatchers("/sign").permitAll()
+		.antMatchers("/sign2").permitAll()
+		.anyRequest().authenticated();
 		http.addFilterBefore(jwtTokenFilter, UsernamePasswordAuthenticationFilter.class);
 
 		http.logout().deleteCookies("custom-cookie").invalidateHttpSession(false); // POST /logout

@@ -1,5 +1,7 @@
 package com.bb.spring.controllers;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -9,8 +11,10 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bb.spring.beans.AuthRequest;
@@ -21,6 +25,8 @@ import com.bb.spring.repositories.UserListRepo;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:3000")
+@RequestMapping("/auth")
 public class AuthController {
 
 	@Autowired
@@ -32,8 +38,8 @@ public class AuthController {
 	@Autowired
 	private UserListRepo userListRepo;
 	
-	@PostMapping("/auth/login")
-	public ResponseEntity<?> login(@RequestBody AuthRequest request){
+	@PostMapping("/login")
+	public ResponseEntity<?> login(@RequestBody @Valid AuthRequest request){
 		try {
 			Authentication authentication = authManager.authenticate(
 					new UsernamePasswordAuthenticationToken(request.getEmail(), request.getPassword()));
@@ -46,8 +52,8 @@ public class AuthController {
 		}
 	}
 	
-	@PostMapping("/auth/create")
-	public ResponseEntity<?> signup(@RequestBody ObjectNode node){
+	@PostMapping("/create")
+	public ResponseEntity<?> signup(@RequestBody @Valid ObjectNode node){
 		System.out.println("create");
 		PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 		String first = node.get("first_name").asText();
