@@ -1,5 +1,7 @@
 package com.bb.spring;
 
+import java.util.Arrays;
+
 import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 
@@ -19,6 +21,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.JdbcUserDetailsManager;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import com.bb.spring.jwt.JwtTokenFilter;
 import com.bb.spring.repositories.UserListRepo;
@@ -52,6 +57,17 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
 		return super.authenticationManagerBean();
 	}
+	@Bean
+	CorsConfigurationSource corsConfigurationSource() {
+
+	    final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+	    CorsConfiguration config = new CorsConfiguration();
+	    source.registerCorsConfiguration("/**", config.applyPermitDefaultValues());
+	    //allow Authorization to be exposed
+	    config.setExposedHeaders(Arrays.asList("Authorization"));
+
+	    return source;
+	}
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
@@ -65,6 +81,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 				);
 //		http.authorizeRequests().mvcMatchers("/**").permitAll(); // if this is placed below the jwttoken filter, it will not COMPILE
 		http.authorizeRequests()
+		.antMatchers("/gameList/**").authenticated()
 		.antMatchers("/auth/**").permitAll()
 		.antMatchers("/sign").permitAll()
 		.antMatchers("/sign2").permitAll()

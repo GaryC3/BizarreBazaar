@@ -10,7 +10,10 @@ export const MDelete = () => {
         useEffect(() => {  
         axios.get('http://localhost:8080/gameList')
             .then(res => {setGames(res.data)}) // sets gamelist state to be that array of games
-        }, []); 
+        }, []),
+        {
+            headers: {'Authorization': 'crap ${token}'}
+        }; 
 
         const handleDelete = async (e) =>{
             try{

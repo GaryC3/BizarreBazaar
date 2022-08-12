@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useRef , useState, useEffect } from 'react';
+import ReactTable from 'react-table';
 import * as ReactBootStrap from "react-bootstrap";
 
 export const MDiscount = () => {
@@ -9,38 +10,12 @@ export const MDiscount = () => {
 
     const[discountdata, setDiscount] = useState([]);
 
-        useEffect(() => {  
-        axios.get('http://localhost:8080/discount')
-            .then(res => {setDiscount(res.data)}) // sets discout state to be that array of discounts
-        }, [setDiscount]); 
-    
-        // const [inEditMode, setInEditMode] = useState({
-        //     status: false,
-        //     rowKey: null
-        // });
-        // const [currentDiscount, setCurrentDiscount] = useState(null);
+    useEffect(() => {  
+    axios.get('http://localhost:8080/discount')
+        .then(res => {setDiscount(res.data)}) // sets discout state to be that array of discounts
+    }, [setDiscount]); 
 
-        // const onEdit = ({genre, discountValue}) => {
-        //     setInEditMode({
-        //         status: true,
-        //         rowKey: genre
-        //     })
-        //     setCurrentDiscount(discountValue);
-        // }
-        
-        // const onSave = ({genre, newDiscount}) => {
-        //     handleSubmit({genre, newDiscount});
-        // }
-    
-        // const onCancel = () => {
-        //     // reset the inEditMode state value
-        //     setInEditMode({
-        //         status: false,
-        //         rowKey: null
-        //     })
-        //     // reset the unit price state value
-        //     setCurrentDiscount(null);
-        // }
+       
 
     const handleSubmit = async (e) =>{
         try{
@@ -58,7 +33,6 @@ export const MDiscount = () => {
     }
     return(
         <>
-        {/* <ReactBootStrap.Table> */}
         <table >
             <tr>
                 <th>Genre</th>
@@ -69,48 +43,7 @@ export const MDiscount = () => {
                         <tr key={discount.genre}>
                             <td>{discount.genre}</td>
                             <td>{discount.discount}</td>
-                                {/* {
-                                    inEditMode.status && inEditMode.rowKey === discount.genre ? (
-                                        <input value={currentDiscount}
-                                               onChange={(event) => setCurrentDiscount(event.target.value)}
-                                        />
-                                    ) : (
-                                        discount.discount
-                                    )
-                                }
-                            <td>
-                            {
-                                    inEditMode.status ===discount.genre ? (
-                                        <React.Fragment>
-                                            <button
-                                                className={"btn-success"}
-                                                onClick={() => onSave({genre: discount.genre, setCurrentDiscount: currentDiscount})}
-                                            >
-                                                Save
-                                            </button>
-                                            
-                                            <button
-                                                className={"btn-secondary"}
-                                                style={{marginLeft: 8}}
-                                                onClick={() => onCancel()}
-                                            >
-                                                Cancel
-                                            </button>
-                                        </React.Fragment>
-                                    ) : (
-                                        <button
-                                            className={"btn-primary"}
-                                            onClick={() => onEdit({id: discount.genre, currentDiscount: discount.discount})}
-                                        >
-                                            Edit
-                                        </button>
-                                    )
-                                } */}
-                            
-
-
                         </tr>
-
                     )
                 }
                 )}

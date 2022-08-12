@@ -3,6 +3,7 @@ package com.bb.spring.controllers;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -14,6 +15,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -39,14 +41,17 @@ public class AuthController {
 	private UserListRepo userListRepo;
 	
 	@PostMapping("/login")
-	public ResponseEntity<?> login(@RequestBody @Valid AuthRequest request){
+	public ResponseEntity<?> login(@RequestBody @RequestHeader @Valid AuthRequest request){
 		try {
 			Authentication authentication = authManager.authenticate(
 					new UsernamePasswordAuthenticationToken(request.getEmail(), request.getPassword()));
 			UserList user = (UserList) authentication.getPrincipal();
 			String accessToken = jwtUtil.generateAccessToken(user);
 			AuthResponse response = new AuthResponse(user.getEmail(), accessToken);
-			return ResponseEntity.ok(response);
+			System.out.println(accessToken);
+			return ResponseEntity.ok()
+					.header(HttpHeaders.ACCESS_CONTROL_EXPOSE_HEADERS, "Authorization")
+					.body(response);
 		}catch(BadCredentialsException ex) {
 			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
 		}

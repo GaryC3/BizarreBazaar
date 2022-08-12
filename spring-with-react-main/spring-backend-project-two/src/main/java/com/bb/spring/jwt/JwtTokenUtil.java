@@ -37,6 +37,7 @@ public class JwtTokenUtil {
 	public boolean validateAccessToken(String token) {
 		try {
 			Jwts.parser().setSigningKey(secretKey).parseClaimsJws(token);
+			return true;
 		}catch(ExpiredJwtException ex) {
 			logger.error("expired", ex);
 		}catch(IllegalArgumentException ex) {

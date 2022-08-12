@@ -3,7 +3,7 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/mockproject2
     username: root
-    password: G3a3r3y3
+    password: root
   jpa:
     show-sql: true
     hibernate:
