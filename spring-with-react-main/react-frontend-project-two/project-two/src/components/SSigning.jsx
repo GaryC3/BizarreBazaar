@@ -11,11 +11,11 @@ export const SSigning = () => {
     const handleSubmit = async (e) =>{
         try{
             e.preventDefault();
-            await axios.post(`http://localhost:8080/userlist`, {
-                first_name: firstRef.current.value,
-                last_name: lastRef.current.value,
-                email: emailRef.current.value,
-                password: passwordRef.current.value
+            await axios.post(`http://localhost:8080/auth/create`, {
+                "first_name": firstRef.current.value,
+                "last_name": lastRef.current.value,
+                "email": emailRef.current.value,
+                "password": passwordRef.current.value
             });
 
             firstRef.current.value = null;

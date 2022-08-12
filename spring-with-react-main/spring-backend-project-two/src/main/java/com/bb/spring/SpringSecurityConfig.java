@@ -31,25 +31,25 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 	private UserListRepo userListRepo;
 	@Autowired
 	private JwtTokenFilter jwtTokenFilter;
-	
+
 	@Bean
 	public PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
 	}
-	
+
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		
+
 		auth.userDetailsService(username -> userListRepo.findByEmail(username)
 				.orElseThrow(() -> new UsernameNotFoundException("Email " + username+ " not found")));
 	}
 
-	
+
 
 	@Override
 	@Bean
 	public AuthenticationManager authenticationManagerBean() throws Exception {
-		
+
 		return super.authenticationManagerBean();
 	}
 
@@ -63,19 +63,19 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 					ex.getMessage());
 					}
 				);
-		http.authorizeRequests().mvcMatchers("/**").permitAll(); // if this is placed below the jwttoken filter, it will not COMPILE
-		http.authorizeRequests().antMatchers("/auth/login").permitAll().anyRequest().authenticated();
+//		http.authorizeRequests().mvcMatchers("/**").permitAll(); // if this is placed below the jwttoken filter, it will not COMPILE
+		http.authorizeRequests().antMatchers("/auth/*").permitAll().anyRequest().authenticated();
 		http.addFilterBefore(jwtTokenFilter, UsernamePasswordAuthenticationFilter.class);
 
 		http.logout().deleteCookies("custom-cookie").invalidateHttpSession(false); // POST /logout
-		// CSRF - 
+		// CSRF -
 		// 1. login to Bank of America (session, cookie)
 		// 2. hacker send you an email with link
 		// 3. click link href=malicious JS   POST boa.com/api/transfer/your-acct/myacct/balance
 		// 4. YOU initiated the request
-		
+
 		// generate a random csrf_token. Unsafe methods MUST contain the CSRF token or-else request is denied
-		
+
 	}
-	
+
 }
