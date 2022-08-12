@@ -3,9 +3,23 @@ import { useState, useEffect } from 'react';
 
 export const PGames = () => {
     const[games, setGames] = useState([]);
+    const yourJWTToken = localStorage.getItem("token");
+    var Header = {
+        headers: {
+           Authorization: "Bearer " + yourJWTToken
+        }
+     }
+    let instance = axios.create();
+    instance.defaults.headers.common['Authorization'] = yourJWTToken;
 
         useEffect(() => {  
-            axios.get('http://localhost:8080/gameList/1').then(res => {setGames(res.data)}) 
+            console.log(Header);
+            
+            axios.get('http://localhost:8080/gameList/1', {
+                headers: {
+                    'Authorization': "Bearer " + yourJWTToken
+                 }
+            }).then(res => {setGames(res.data)}) 
             axios.delete(`http://localhost:8080/invoicelines/1`)////////////////////////////////
             /////////////////////////////////////////////////^////////
             ////////////////////////////////////////////////^^^///////
@@ -18,6 +32,7 @@ export const PGames = () => {
 
         const handleAdd = async (e) =>{
             try{
+                
                 const currentgameid = e.target.value
                 await axios.post(`http://localhost:8080/invoicelines`,{ 
                     "userList":{

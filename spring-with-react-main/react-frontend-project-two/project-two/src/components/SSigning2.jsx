@@ -5,6 +5,8 @@ export const SSigning2 = () => {
     
     const firstRef = useRef();
     const passwordRef = useRef();
+    var token
+    
 
     const handleSubmit = async (e) =>{
         try{
@@ -12,7 +14,15 @@ export const SSigning2 = () => {
             await axios.post(`http://localhost:8080/auth/login`, {
                 email: firstRef.current.value,
                 password: passwordRef.current.value
+            }).then(response => {
+                console.log("email from post is: " + response.email);
+                console.log(response.accessToken);
+                token = response.data.accessToken;
             });
+
+            firstRef.current.value = null;
+            passwordRef.current.value = null;
+            localStorage.setItem("token", token);
 
         }catch(err){
             console.log(err); 
