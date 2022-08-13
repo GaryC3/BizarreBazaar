@@ -70,6 +70,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 				);
 //		http.authorizeRequests().mvcMatchers("/**").permitAll(); // if this is placed below the jwttoken filter, it will not COMPILE
 		http.authorizeRequests()
+		.antMatchers("/**").permitAll()
 		.antMatchers("/gameList/**").authenticated()
 		.antMatchers("/auth/**").permitAll()
 		.anyRequest().authenticated();

@@ -30,7 +30,8 @@ export const MDiscount = () => {
         }catch(err){
             console.log(err); 
         }
-    }
+    };
+    
     return(
         <>
         <table >
@@ -50,11 +51,11 @@ export const MDiscount = () => {
 
         </table>
         {/* </ReactBootStrap.Table> */}
-        <div class="input-group mb-3 centeredDiscount">
-            <input type="text" class="bg-light long2" placeholder="Genre" aria-label="genre" ref={genreRef} required="required"  />
+        <div className="input-group mb-3 centeredDiscount">
+            <input type="text" className="bg-light long2" placeholder="Genre" aria-label="genre" ref={genreRef} required="required"  />
             
-            <input type="number" class="bg-ligh long2" placeholder="Discount" ara-label="discount" required="required" ref={discountRef}/>
-            <button class="btn btn-primary active merchantdiscount long2" type="button" onClick={handleSubmit}>Submit</button>
+            <input type="number" className="bg-ligh long2" placeholder="Discount" ara-label="discount" required="required" ref={discountRef}/>
+            <button className="btn btn-primary active merchantdiscount long2" type="button" onClick={handleSubmit}>Submit</button>
         </div>
         
         </>   

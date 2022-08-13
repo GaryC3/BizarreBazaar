@@ -8,7 +8,7 @@ export const MNew = () => {
     const priceRef = useRef();
     const quantityRef = useRef();
     const descriptionRef = useRef();
-    // var select;
+    
     const[discount, setDiscount] = useState([]);
     useEffect(() => {  
         axios.get('http://localhost:8080/discount')
@@ -44,10 +44,10 @@ export const MNew = () => {
 
     return(
         <>
-        <div class="input-group mb-3 long centeredSelGame">
-            <input type="text" class="form-control bg-light" placeholder="Title" aria-label="title" id="title" ref={titleRef} required  />
-            {/* <input type="text" class="form-control bg-light" placeholder="Genre" aria-label="genre" id="genre" ref={genreRef} required /> */}
-            <select class="form-control bg-light" searchable="Search here.." name="genre" id="genre">
+        <div className="input-group mb-3 long centeredSelGame">
+            <input type="text" className="form-control bg-light" placeholder="Title" aria-label="title" id="title" ref={titleRef} required  />
+            {/* <input type="text" className="form-control bg-light" placeholder="Genre" aria-label="genre" id="genre" ref={genreRef} required /> */}
+            <select className="form-control bg-light" searchable="Search here.." name="genre" id="genre">
                 <option id="genre" required value="" disabled selected>Select Genre</option>
                 {discount.map((discount, i, e) =>{
                     return(
@@ -56,15 +56,15 @@ export const MNew = () => {
                 }
                 )}
             </select>
-            <input type="number" class="form-control bg-light" placeholder="Price" ara-label="price" id="price" ref={priceRef} required  />
-            <input type="number" class="form-control bg-light" placeholder="Quantity" ara-label="quantity" id="quantity" ref={quantityRef} required />
+            <input type="number" className="form-control bg-light" placeholder="Price" ara-label="price" id="price" ref={priceRef} required  />
+            <input type="number" className="form-control bg-light" placeholder="Quantity" ara-label="quantity" id="quantity" ref={quantityRef} required />
         </div>
-        <div class="input-group mb-3 longnopadding centeredNewGame">
+        <div className="input-group mb-3 longnopadding centeredNewGame">
 
                 <div>
-                    <textarea class="bg-light bigtextbox" placeholder="description" aria-label="description" id="description" ref={descriptionRef} required></textarea>
-                    {/* <input type= "textarea" class="bg-light bigtextbox" placeholder="Description" aria-label="description" /> */}
-                    <button class="btn btn-primary active merchantaddsubmit" type="button" onClick={handleSubmit}>Submit</button>
+                    <textarea className="bg-light bigtextbox" placeholder="description" aria-label="description" id="description" ref={descriptionRef} required></textarea>
+                    {/* <input type= "textarea" className="bg-light bigtextbox" placeholder="Description" aria-label="description" /> */}
+                    <button className="btn btn-primary active merchantaddsubmit" type="button" onClick={handleSubmit}>Submit</button>
 
                 </div>
 

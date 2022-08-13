@@ -10,8 +10,9 @@ export const PGames = () => {
 
     var Header = {
         headers: {
-        //    'Authorization': "Bearer " + yourJWTToken
-        Authorization: "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI2LFJEYXZpc0BnbWFpbC5jb20iLCJpc3MiOiJCaXphcnJlQmF6YWFyIiwiaWF0IjoxNjYwMzk5MTkyLCJleHAiOjE2NjA0ODU1OTJ9.WdMLiD6CIZGnSdDI6UuUTN4AUKg3zoBM9hg-lwTCP9749BBzL8rdHvxmwNue5pO7U5DzyH70Jy15s2tAAyeRLA"
+            'Access-Control-Allow-Origin':`*`,
+            'Authorization': yourJWTToken
+        //Authorization: "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI2LFJEYXZpc0BnbWFpbC5jb20iLCJpc3MiOiJCaXphcnJlQmF6YWFyIiwiaWF0IjoxNjYwMzk5MTkyLCJleHAiOjE2NjA0ODU1OTJ9.WdMLiD6CIZGnSdDI6UuUTN4AUKg3zoBM9hg-lwTCP9749BBzL8rdHvxmwNue5pO7U5DzyH70Jy15s2tAAyeRLA"
         }
      }
 
