@@ -76,7 +76,6 @@ public class AuthController {
 		newUser.setPassword(encodedPassword);
 		
 		System.out.println(newUser);
-		System.out.println(newUser);
 				
 		return new ResponseEntity<>(userListRepo.save(newUser), HttpStatus.CREATED);
 		
