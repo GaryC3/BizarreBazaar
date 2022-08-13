@@ -5,24 +5,69 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100%;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
 .centerDiscTab {
   right: 100;
   transform: translate(500%, 0%);
 }
-.centeredDiscount {
-  
-  transform: translate(20%, 0%);
-}
+
 .centeredSelGame{
  
   left: 45vw;
   transform: translate(-50%, -50%);
+}
+.noScroll{
+  overflow: hidden;
+}
+.mainbackground{
+  background-image:url("../public/mainback.png");
+  background-color: #cccccc; /* Used if the image is unavailable */
+  height: 100%; /* You must set a specified height */
+  background-position: top; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  background-attachment: fixed;
+}
+.browseBackground{
+  background-image:url("../public/browse.png");
+  background-color: #cccccc; /* Used if the image is unavailable */
+  height: 1800px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  background-attachment: fixed;
+}
+.ownedBackground{
+  background-image:url("../public/signin.png");
+  background-color: #cccccc; /* Used if the image is unavailable */
+  height: 100%; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}.signinBackground{
+  background-image:url("../public/createBackground.png");
+  background-color: #cccccc; /* Used if the image is unavailable */
+  height: 90ch; /* You must set a specified height */
+  background-position: top; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  background-attachment: fixed;
+}
+.createBackground{
+  background-image:url("../public/createBackground.png");
+  background-color: #FFFFFF; /* Used if the image is unavailable */
+  height: 90ch; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  background-attachment: fixed;
 }
 .centeredNewGame{
  
