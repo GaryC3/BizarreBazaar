@@ -36,9 +36,7 @@ public class JwtTokenUtil {
 	
 	public boolean validateAccessToken(String token) {
 		try {
-			System.out.println("a");
 			Jwts.parser().setSigningKey(secretKey).parseClaimsJws(token);
-			System.out.println("b");
 			return true;
 		}catch(ExpiredJwtException ex) {
 			logger.error("expired", ex);
@@ -58,7 +56,6 @@ public class JwtTokenUtil {
 		return parseClaims(token).getSubject();
 	}
 	private Claims parseClaims(String token) {
-		System.out.println("c");
 		return Jwts.parser().setSigningKey(secretKey).parseClaimsJws(token).getBody();
 	}
 
