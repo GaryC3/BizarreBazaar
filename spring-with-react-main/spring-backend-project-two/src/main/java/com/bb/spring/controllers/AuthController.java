@@ -51,6 +51,7 @@ public class AuthController {
 			System.out.println(accessToken);
 			return ResponseEntity.ok()
 					.header(HttpHeaders.ACCESS_CONTROL_EXPOSE_HEADERS, "Authorization" + accessToken)
+					.header(HttpHeaders.ACCESS_CONTROL_ALLOW_METHODS, "POST", "GET", "PUT", "DELETE")
 					.body(response);
 		}catch(BadCredentialsException ex) {
 			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
