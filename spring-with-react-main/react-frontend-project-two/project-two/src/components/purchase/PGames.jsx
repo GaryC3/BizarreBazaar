@@ -49,16 +49,17 @@ export const PGames = () => {
 
     return(
         <> 
-            <div id ="container">
+            <button id ="container">
                 {games.map((game, i, e) =>{
                     return(
                         <div key ={game.gameid}>
                             <div>
                                 <div>
-                                    <img className="gameSize" src="placeholder.png" alt="game" />
+                                    <img className="gameSize" data-toggle="popover" title={game.description} data-bs-content={game.description} src={`${game.title}.png`} />
+                                    
                                     <input type="checkbox" value={game.gameid} onChange = {handleAdd}/>
                                     <div className="list-group">
-                                        <div className="text-center">Title :</div>
+                                        <div className="text-center" >Title :</div>
                                         <div className=" list-group-item-action list-group-item-secondary text-center">{game.title}</div>
                                     </div>
                                     <div className="list-group">
@@ -70,7 +71,7 @@ export const PGames = () => {
                         </div>
                     );
                 })}
-            </div> 
+            </button> 
         </> 
     );
 }
