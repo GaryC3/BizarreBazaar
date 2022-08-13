@@ -15,14 +15,17 @@ export const SSigning2 = () => {
                 email: firstRef.current.value,
                 password: passwordRef.current.value
             }).then(response => {
-                console.log("email from post is: " + response.email);
-                console.log(response.accessToken);
+                console.log("email from post is: " + response.data.email);
+                console.log(response.data.accessToken);
                 token = response.data.accessToken;
             });
 
             firstRef.current.value = null;
             passwordRef.current.value = null;
             localStorage.setItem("token", token);
+            console.log("Testing: ---------------------")
+            console.log(token)
+            console.log(localStorage.getItem("token"))
 
         }catch(err){
             console.log(err); 

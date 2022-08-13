@@ -57,17 +57,6 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
 		return super.authenticationManagerBean();
 	}
-	@Bean
-	CorsConfigurationSource corsConfigurationSource() {
-
-	    final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-	    CorsConfiguration config = new CorsConfiguration();
-	    source.registerCorsConfiguration("/**", config.applyPermitDefaultValues());
-	    //allow Authorization to be exposed
-	    config.setExposedHeaders(Arrays.asList("Authorization"));
-
-	    return source;
-	}
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {

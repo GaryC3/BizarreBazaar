@@ -4,22 +4,21 @@ import { useState, useEffect } from 'react';
 export const PGames = () => {
     const[games, setGames] = useState([]);
     const yourJWTToken = localStorage.getItem("token");
+    console.log("Testing: ---------------------")
+    console.log(localStorage.getItem("token"))
+    console.log(yourJWTToken)
+
     var Header = {
         headers: {
-           Authorization: "Bearer " + yourJWTToken
+        //    'Authorization': "Bearer " + yourJWTToken
+        Authorization: "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI2LFJEYXZpc0BnbWFpbC5jb20iLCJpc3MiOiJCaXphcnJlQmF6YWFyIiwiaWF0IjoxNjYwMzk5MTkyLCJleHAiOjE2NjA0ODU1OTJ9.WdMLiD6CIZGnSdDI6UuUTN4AUKg3zoBM9hg-lwTCP9749BBzL8rdHvxmwNue5pO7U5DzyH70Jy15s2tAAyeRLA"
         }
      }
-    let instance = axios.create();
-    instance.defaults.headers.common['Authorization'] = yourJWTToken;
 
         useEffect(() => {  
             console.log(Header);
             
-            axios.get('http://localhost:8080/gameList/1', {
-                headers: {
-                    'Authorization': "Bearer " + yourJWTToken
-                 }
-            }).then(res => {setGames(res.data)}) 
+            axios.get('http://localhost:8080/gameList/1', Header).then(res => {setGames(res.data)}) 
             axios.delete(`http://localhost:8080/invoicelines/1`)////////////////////////////////
             /////////////////////////////////////////////////^////////
             ////////////////////////////////////////////////^^^///////
