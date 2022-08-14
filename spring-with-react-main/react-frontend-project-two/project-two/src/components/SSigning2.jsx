@@ -6,7 +6,7 @@ export const SSigning2 = () => {
     const firstRef = useRef();
     const passwordRef = useRef();
     var token
-    
+    var id
 
     const handleSubmit = async (e) =>{
         try{
@@ -15,17 +15,16 @@ export const SSigning2 = () => {
                 email: firstRef.current.value,
                 password: passwordRef.current.value
             }).then(response => {
-                console.log("email from post is: " + response.data.email);
-                console.log(response.data.accessToken);
+                console.log("User ID: " + response.data.id);
+                id = response.data.id;
+                console.log("Access Token: " + response.data.accessToken);
                 token = response.data.accessToken;
             });
 
             firstRef.current.value = null;
             passwordRef.current.value = null;
             localStorage.setItem("token", token);
-            console.log("Testing: ---------------------")
-            console.log(token)
-            console.log(localStorage.getItem("token"))
+            localStorage.setItem("id", id);
 
         }catch(err){
             console.log(err); 
