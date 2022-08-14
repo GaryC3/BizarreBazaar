@@ -56,15 +56,17 @@ export const PGames = () => {
                         <div key ={game.gameid}>
                             <div>
                                 <div>
-                                    <img className="gameSize" data-toggle="popover" title={game.description} data-bs-content={game.description} src={`${game.title}.png`} />
+                                    <img className="gameSize" data-toggle="popover" title={game.description} data-bs-content={game.description} src={`${game.title}.png`} onError={(e)=>{e.target.onerror = null; e.target.src="placeholder.png"}}/>
+                                    
+            
                                     
                                     <input type="checkbox" value={game.gameid} onChange = {handleAdd}/>
                                     <div className="list-group">
-                                        <div className="text-center" >Title :</div>
+                                        <div className="text-center list-group-item-dark" >Title :</div>
                                         <div className=" list-group-item-action list-group-item-secondary text-center">{game.title}</div>
                                     </div>
                                     <div className="list-group">
-                                        <div className="text-center">Price :</div>
+                                        <div className="text-center list-group-item-dark">Price :</div>
                                         <div className=" list-group-item-action list-group-item-secondary text-center">${Math.ceil((game.price-game.price*game.discount.discount)*100)/100}</div>
                                     </div>
                                 </div>
