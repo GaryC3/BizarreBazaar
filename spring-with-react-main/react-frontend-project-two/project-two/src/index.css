@@ -12,6 +12,26 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.sUpCenter{
+  position: absolute;
+  top: 30%;
+  left: 20%;
+}
+.signinDiv{
+  display: flex;
+  justify-content: space-around;
+
+}
+.signinButtonCenter{
+  position: relative;
+  top: 20%;
+  left: 60%;
+}
+.centered{
+  position:relative;
+  top: 10%;
+  left: 0%;
+}
 
 .centerDiscTab {
   right: 100;
@@ -29,7 +49,7 @@ code {
 .mainbackground{
   background-image:url("../public/mainback.png");
   background-color: #cccccc; /* Used if the image is unavailable */
-
+  height: 1080px;
   background-position: top; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
@@ -46,19 +66,20 @@ code {
 .ownedBackground{
   background-image:url("../public/treasure.png");
   background-color: #cccccc; /* Used if the image is unavailable */
-  /* You must set a specified height */
+  height: 1080px;
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover; /* Resize the background image to cover the entire container */
+  background-size: cover;
+  background-attachment:fixed;
 }
 .signinBackground{
   background-image:url("../public/createBackground.png");
   background-color: #cccccc; /* Used if the image is unavailable */
-  height: 940px; /* You must set a specified height */
+  height: 1080px;
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
-  background-attachment: fixed;
+  
 }
 .merchantScroll{
   display: flexbox;
@@ -81,11 +102,11 @@ code {
 .createBackground{
   background-image:url("../public/createBackground.png");
   background-color: #FFFFFF; /* Used if the image is unavailable */
-  height: 90ch; /* You must set a specified height */
+  height: 1080px; /* You must set a specified height */
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
-  background-attachment: fixed;
+  
 }
 .centeredNewGame{
 

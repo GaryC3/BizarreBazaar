@@ -32,15 +32,21 @@ export const SSigning2 = () => {
     }
     return(
         <>
-        <div className="input-group mb-3 long3 py-4">
-            <input type="text" className="form-control bg-light" placeholder="Email" aria-label="firstName" id="firstName" ref={firstRef} />
+        <div className="centered signinDiv">
+        <div className="input-group mb-3 long2 py-4" >
+            <input type="text" className="form-control bg-light " placeholder="Email" aria-label="firstName" id="firstName" ref={firstRef} />
+        </div>
+        <div className="input-group mb-3 long2 py-4" > 
             <input type="password" className="form-control bg-light" placeholder="Password" aria-label="Password" id="password" ref={passwordRef} />
         </div>
-        <div className="input-group">
-            <div>
-                <button className="btn btn-primary active button1" type="button" onClick={handleSubmit}>Submit</button>
+        </div>
+        <div className="signinButtonCenter">
+            <div className = "">
+                {/* <a href="/" className="btn btn-primary active button1" role="button" area-pressed="true" onClick={handleSubmit}>Submit</a> */}
+                <a href="/" className="btn btn-primary active button1" role="button" aria-pressed="true" style={{fontSize: "40px"}} onClick = {handleSubmit}>Confirm</a>
             </div>
         </div>
+        
         </> 
     );
 }
