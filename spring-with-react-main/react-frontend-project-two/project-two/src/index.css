@@ -72,6 +72,15 @@ code {
   background-size: cover;
   background-attachment:fixed;
 }
+.conBackground{
+  background-image:url("../public/cart.png");
+  background-color: #cccccc; /* Used if the image is unavailable */
+  height: 1080px;
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
+  background-attachment:fixed;
+}
 .signinBackground{
   background-image:url("../public/createBackground.png");
   background-color: #cccccc; /* Used if the image is unavailable */
