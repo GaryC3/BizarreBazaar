@@ -25,10 +25,6 @@ public class Invoice {
 	@Column(name = "invoice_id")
 	private int invoice_id;
 	
-//	@OneToMany(mappedBy = "invoice")
-//	@JsonIgnore
-//	private Set<InvoiceLines> invoiceLines;
-	
 	@ManyToOne // DO NOT use Eager unless you 100% ALWAYS need the child record
 	@JoinColumn(name = "id")
 	private UserList userList;
@@ -36,17 +32,6 @@ public class Invoice {
 	@ManyToOne // DO NOT use Eager unless you 100% ALWAYS need the child record
 	@JoinColumn(name = "gameid")
 	private GameList gameList;
-//	@Column(name="Inventory")
-//	@PositiveOrZero
-//	private int inventory;
-	
-//	@ManyToOne // DO NOT use Eager unless you 100% ALWAYS need the child record
-//	@JoinColumn(name = "Genre")
-//	private Discount discount;
-	
-//	@OneToMany(mappedBy = "game")
-//	@JsonIgnore
-//	private Set<Invoice> invoices;
 	
 	public Invoice() {
 		super();

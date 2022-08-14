@@ -5,27 +5,90 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100%;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
 .centerDiscTab {
   right: 100;
   transform: translate(500%, 0%);
 }
-.centeredDiscount {
-  
-  transform: translate(20%, 0%);
-}
+
 .centeredSelGame{
- 
+
   left: 45vw;
   transform: translate(-50%, -50%);
 }
+.noScroll{
+  overflow: hidden;
+}
+.mainbackground{
+  background-image:url("../public/mainback.png");
+  background-color: #cccccc; /* Used if the image is unavailable */
+
+  background-position: top; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  background-attachment: fixed;
+}
+.browseBackground{
+  background-image:url("../public/browse.png");
+  background-color: #cccccc; /* Used if the image is unavailable */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  background-attachment: fixed;
+}
+.ownedBackground{
+  background-image:url("../public/treasure.png");
+  background-color: #cccccc; /* Used if the image is unavailable */
+  /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+.signinBackground{
+  background-image:url("../public/createBackground.png");
+  background-color: #cccccc; /* Used if the image is unavailable */
+  height: 940px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  background-attachment: fixed;
+}
+.merchantScroll{
+  display: flexbox;
+  background-image: url("../public/merchantscrool.png");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-attachment: scroll;
+  height: 200px;
+}
+.manageBackground{
+  background-image:url("../public/merchant.png");
+  background-color: #cccccc; /* Used if the image is unavailable */
+
+  background-position: top; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  background-attachment: fixed;
+}
+.createBackground{
+  background-image:url("../public/createBackground.png");
+  background-color: #FFFFFF; /* Used if the image is unavailable */
+  height: 90ch; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  background-attachment: fixed;
+}
 .centeredNewGame{
- 
+
   left: 48vw;
   transform: translate(-50%, -50%);
 }
@@ -39,7 +102,7 @@ code {
   height: 70px;
   width: 350px;
   margin: 45px;
-  
+
   margin-left: 85px;
   font-size: 35px;
 }
@@ -65,7 +128,7 @@ code {
 .mdiscountbox {
   justify-content: space-evenly;
   height: 160px;
-  
+
 }
 .merchantaddsubmit {
   clear: left;
@@ -111,7 +174,7 @@ code {
   margin-bottom:60px;
 }
 .back {
-  
+
   position: absolute;
   height: 50px;
   width: 50px;
@@ -139,8 +202,8 @@ code {
   position: relative;
 }
 #container {
-   margin: 20px; 
-  
+   margin: 20px;
+
   display: flex;                  /* establish flex container */
   align-items: center;
   justify-content: center;
@@ -148,6 +211,7 @@ code {
   flex-wrap: wrap;              /* default value; can be omitted */
   /*justify-content: space-between; /* switched from default (flex-start, see below) */
   /* background-color: rgb(232, 236, 243); */
+  background-color: transparent;
 }
 #container > div {
   width: 300px;
@@ -160,7 +224,7 @@ code {
 /* .navbar {
   display: flex;
   justify-content: space-between;
-  background-color: rgb(173, 166, 166); 
+  background-color: rgb(173, 166, 166);
   padding: 15px 5px 15px;
 }
 

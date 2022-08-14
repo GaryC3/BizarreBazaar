@@ -10,7 +10,10 @@ export const MDelete = () => {
         useEffect(() => {  
         axios.get('http://localhost:8080/gameList')
             .then(res => {setGames(res.data)}) // sets gamelist state to be that array of games
-        }, []); 
+        }, []),
+        {
+            headers: {'Authorization': ''}
+        }; 
 
         const handleDelete = async (e) =>{
             try{
@@ -22,23 +25,12 @@ export const MDelete = () => {
                 console.log(err); 
             }
         }
-        // const handleUpdate = async (e) =>{
-        //     try{
-        //         await axios.put(`http://localhost:8080/gameList}`, {
-        //             // first_name: firstRef.current.value,
-        //             // last_name: lastRef.current.value,
-        //             // email: emailRef.current.value,
-        //             // password: passwordRef.current.value
-        //         });
-        //     }catch(err){
-        //         console.log(err); 
-        //     }
-        // }
+
     return(
         <>
         
-        <div class="input-group mb-3 long">
-        <select class="form-control bg-light centeredSelGame" searchable="Search here.." name="gameid" id="gameid">
+        <div className="input-group mb-3 long">
+        <select className="form-control bg-light centeredSelGame" searchable="Search here.." name="gameid" id="gameid">
         <option disabled selected>Select Game</option>
         {games.map((game, i, e) =>{
                     return(
@@ -49,13 +41,13 @@ export const MDelete = () => {
                 }
                 )}
             </select> 
-            {/* <input type="number" class="form-control bg-light" placeholder="" ara-label="quantity" required /> */}
+            {/* <input type="number" className="form-control bg-light" placeholder="" ara-label="quantity" required /> */}
             
         </div>
-        <div class= "input-group mb-3 long3 centeredSelGame">
-            <button class="btn btn-primary active button1" type="button" onClick={handleDelete}>Delete</button>
+        <div className= "input-group mb-3 long3 centeredSelGame">
+            <button className="btn btn-primary active button1" type="button" onClick={handleDelete}>Delete</button>
 
-            {/* <button class="btn btn-primary active button1" type="button" onClick={handleUpdate}>Update</button> */}
+            {/* <button className="btn btn-primary active button1" type="button" onClick={handleUpdate}>Update</button> */}
         </div>    
         </>   
         
