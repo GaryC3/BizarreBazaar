@@ -17,5 +17,8 @@ public interface GameListRepo extends JpaRepository<GameList, Integer>{
 	@Query("FROM GameList game LEFT JOIN game.invoice inv ON inv.userList.id = ?1 WHERE inv.gameList.gameid IS NULL")
 	//@Query("SELECT gameid FROM GameList game MINUS SELECT gameid FROM game.invoice.gameList")
 	List<GameList> findUnowned(@Param("userid") int userid);
+	
+	@Query("FROM GameList game INNER JOIN game.invoice inv ON inv.userList.id = ?1")
+	List<GameList> findOwned(@Param("userid") int userid);
 
 }

@@ -6,7 +6,7 @@ export const OGames = () => {
     
 
         useEffect(() => {  
-        axios.get('http://localhost:8080/gameList')
+        axios.get(`http://localhost:8080/gameList/my/${localStorage.getItem("id")}`)
             .then(res => {setGames(res.data)}) // sets my devs state to be that array of devs
         }, []); 
 
@@ -16,7 +16,7 @@ export const OGames = () => {
             <tbody>
                         {games.map((game) =>{
                             return(
-                                <img class="gameSize" src="placeholder.png" alt="game" />
+                                <img className="gameSize" data-toggle="popover" title={game.description} data-bs-content={game.description} src={`${game.title}.png`} onError={(e)=>{e.target.onerror = null; e.target.src="placeholder.png"}}/>
                             );
                         })}
             </tbody> 

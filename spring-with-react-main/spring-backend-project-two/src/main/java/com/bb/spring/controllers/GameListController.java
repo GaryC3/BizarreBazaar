@@ -37,6 +37,11 @@ public class GameListController {
 		int realuserid = Integer.parseInt(userid);
 		return gameListRepo.findUnowned(realuserid);
 	}
+	@GetMapping("/my/{userid}")
+	public List<GameList> getOwned(@PathVariable String userid){
+		int realuserid = Integer.parseInt(userid);
+		return gameListRepo.findOwned(realuserid);
+	}
 	
 	@PostMapping
 	@Transactional
