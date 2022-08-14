@@ -44,6 +44,7 @@ export const MNew = () => {
 
     return(
         <>
+        <div className="merchantScroll">
         <div className="input-group mb-3 long centeredSelGame">
             <input type="text" className="form-control bg-light" placeholder="Title" aria-label="title" id="title" ref={titleRef} required  />
             {/* <input type="text" className="form-control bg-light" placeholder="Genre" aria-label="genre" id="genre" ref={genreRef} required /> */}
@@ -69,7 +70,7 @@ export const MNew = () => {
                 </div>
 
         </div>
-
+        </div>
 
         </>
 

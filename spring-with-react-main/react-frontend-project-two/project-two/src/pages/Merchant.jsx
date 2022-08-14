@@ -4,7 +4,7 @@ export const Merchant = () => {
     return(
         <>
         <back.Back/>
-        <div >
+        <div className="manageBackground">
             <h1 className="text-center title">Add New Game</h1>
             <admin.MNew />
             <h1 className="text-center title">Remove Game</h1>

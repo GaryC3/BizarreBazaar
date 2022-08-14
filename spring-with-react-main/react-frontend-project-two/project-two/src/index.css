@@ -19,7 +19,7 @@ code {
 }
 
 .centeredSelGame{
- 
+
   left: 45vw;
   transform: translate(-50%, -50%);
 }
@@ -29,7 +29,7 @@ code {
 .mainbackground{
   background-image:url("../public/mainback.png");
   background-color: #cccccc; /* Used if the image is unavailable */
-  height: 100%; /* You must set a specified height */
+
   background-position: top; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
@@ -44,17 +44,36 @@ code {
   background-attachment: fixed;
 }
 .ownedBackground{
-  background-image:url("../public/signin.png");
+  background-image:url("../public/treasure.png");
   background-color: #cccccc; /* Used if the image is unavailable */
-  height: 100%; /* You must set a specified height */
+  /* You must set a specified height */
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
-}.signinBackground{
+}
+.signinBackground{
   background-image:url("../public/createBackground.png");
   background-color: #cccccc; /* Used if the image is unavailable */
   height: 940px; /* You must set a specified height */
   background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  background-attachment: fixed;
+}
+.merchantScroll{
+  display: flexbox;
+  background-image: url("../public/merchantscrool.png");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-attachment: scroll;
+  height: 200px;
+}
+.manageBackground{
+  background-image:url("../public/merchant.png");
+  background-color: #cccccc; /* Used if the image is unavailable */
+
+  background-position: top; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
   background-attachment: fixed;
@@ -69,7 +88,7 @@ code {
   background-attachment: fixed;
 }
 .centeredNewGame{
- 
+
   left: 48vw;
   transform: translate(-50%, -50%);
 }
@@ -83,7 +102,7 @@ code {
   height: 70px;
   width: 350px;
   margin: 45px;
-  
+
   margin-left: 85px;
   font-size: 35px;
 }
@@ -109,7 +128,7 @@ code {
 .mdiscountbox {
   justify-content: space-evenly;
   height: 160px;
-  
+
 }
 .merchantaddsubmit {
   clear: left;
@@ -155,7 +174,7 @@ code {
   margin-bottom:60px;
 }
 .back {
-  
+
   position: absolute;
   height: 50px;
   width: 50px;
@@ -183,8 +202,8 @@ code {
   position: relative;
 }
 #container {
-   margin: 20px; 
-  
+   margin: 20px;
+
   display: flex;                  /* establish flex container */
   align-items: center;
   justify-content: center;
@@ -205,7 +224,7 @@ code {
 /* .navbar {
   display: flex;
   justify-content: space-between;
-  background-color: rgb(173, 166, 166); 
+  background-color: rgb(173, 166, 166);
   padding: 15px 5px 15px;
 }
 
