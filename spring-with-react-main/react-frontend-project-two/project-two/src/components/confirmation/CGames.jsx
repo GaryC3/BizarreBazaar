@@ -6,7 +6,7 @@ export const CGames = () => {
     var total = 0;
 
         useEffect(() => {  
-            axios.get('http://localhost:8080/invoicelines/1').then(res => {setGames(res.data)}) 
+            axios.get(`http://localhost:8080/invoicelines/${localStorage.getItem("id")}`).then(res => {setGames(res.data)}) 
         }, []); 
 
         const handleAdd = async (e) =>{
@@ -27,7 +27,7 @@ export const CGames = () => {
                 try{
                     axios.post(`http://localhost:8080/invoice`,{ 
                         "userList":{
-                            "id": 1
+                            "id": `${localStorage.getItem("id")}`
                         },
                         "gameList": {
                             "gameid": game2.gameList.gameid

@@ -19,8 +19,8 @@ export const PGames = () => {
         useEffect(() => {  
             console.log(Header);
             
-            axios.get('http://localhost:8080/gameList/1', Header).then(res => {setGames(res.data)}) 
-            axios.delete(`http://localhost:8080/invoicelines/1`)////////////////////////////////
+            axios.get(`http://localhost:8080/gameList/${localStorage.getItem("id")}`, Header).then(res => {setGames(res.data)}) 
+            axios.delete(`http://localhost:8080/invoicelines/${localStorage.getItem("id")}`)////////////////////////////////
             /////////////////////////////////////////////////^////////
             ////////////////////////////////////////////////^^^///////
             ///////////////////Fix when id available///////^^^^^//////
@@ -36,7 +36,7 @@ export const PGames = () => {
                 const currentgameid = e.target.value
                 await axios.post(`http://localhost:8080/invoicelines`,{ 
                     "userList":{
-                        "id": 1
+                        "id": `${localStorage.getItem("id")}`
                     },
                     "gameList": {
                         "gameid": currentgameid
