@@ -29,7 +29,7 @@ code {
 .mainbackground{
   background-image:url("../public/mainback.png");
   background-color: #cccccc; /* Used if the image is unavailable */
-  height: 100%; /* You must set a specified height */
+ 
   background-position: top; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
@@ -38,23 +38,42 @@ code {
 .browseBackground{
   background-image:url("../public/browse.png");
   background-color: #cccccc; /* Used if the image is unavailable */
-  height: 1800px; /* You must set a specified height */
+  /* You must set a specified height */
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
   background-attachment: fixed;
 }
 .ownedBackground{
-  background-image:url("../public/signin.png");
+  background-image:url("../public/treasure.png");
   background-color: #cccccc; /* Used if the image is unavailable */
-  height: 100%; /* You must set a specified height */
+  /* You must set a specified height */
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
-}.signinBackground{
+}
+.signinBackground{
   background-image:url("../public/createBackground.png");
   background-color: #cccccc; /* Used if the image is unavailable */
   height: 90ch; /* You must set a specified height */
+  background-position: top; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  background-attachment: fixed;
+}
+.merchantScroll{
+  display: flexbox;
+  background-image: url("../public/merchantscrool.png");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-attachment: scroll;
+  height: 200px;
+}
+.manageBackground{
+  background-image:url("../public/merchant.png");
+  background-color: #cccccc; /* Used if the image is unavailable */
+ 
   background-position: top; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
