@@ -12,6 +12,25 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.spacingMain{
+  display:flex;
+  justify-content: space-evenly;
+}
+.signOne{
+  background-image:url("../public/sign1.png");
+  background-color: transparent; /* Used if the image is unavailable */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
+}
+.signTwo{
+  background-image:url("../public/sign2.png");
+  background-color: transparent; /* Used if the image is unavailable */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
+}
 .sUpCenter{
   position: absolute;
   top: 30%;
@@ -171,12 +190,8 @@ code {
   border-radius: 25px;
 }
 .merchantdiscount {
-  clear: left;
-  padding-top: 25px;
-  padding-bottom: 25px;
   font-size: 15px;
-  width: 100px;
-  border-radius: 25px;
+  width: 150px;
 }
 .button1 {
   clear: left;
@@ -204,13 +219,17 @@ code {
   margin-bottom:60px;
 }
 .back {
-
+  background-image: url("../public/back.png");
   position: absolute;
-  height: 50px;
-  width: 50px;
+  height: 10%;
+  width: 10%;
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; 
   margin-top: 42px;
   margin-left: 45px;
   z-index: 2;
+  border: #000000;
+  border-style: groove;
 }
 .sign {
   margin-left: 257px;

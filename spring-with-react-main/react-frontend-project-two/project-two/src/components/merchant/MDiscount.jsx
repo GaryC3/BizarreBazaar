@@ -51,12 +51,12 @@ export const MDiscount = () => {
 
         </table>
         {/* </ReactBootStrap.Table> */}
-        <div className="input-group mb-3 centeredDiscount">
-            <input type="text" className="bg-light long2" placeholder="Genre" aria-label="genre" ref={genreRef} required="required"  />
+        <form className="form-inline input-group mb-3 centeredDiscount ">
+            <input type="text" className="form-control bg-light long2" placeholder="Genre" aria-label="genre" ref={genreRef} required="required"  />
             
-            <input type="number" className="bg-ligh long2" placeholder="Discount" ara-label="discount" required="required" ref={discountRef}/>
-            <button className="btn btn-primary active merchantdiscount long2" type="button" onClick={handleSubmit}>Submit</button>
-        </div>
+            <input type="number" className="form-control bg-ligh long2" placeholder="Discount" ara-label="discount" required="required" ref={discountRef}/>
+            <button className="btn btn-default merchantdiscount  long2 signTwo" type="button" onClick={handleSubmit}>Submit</button>
+        </form>
         
         </>   
         

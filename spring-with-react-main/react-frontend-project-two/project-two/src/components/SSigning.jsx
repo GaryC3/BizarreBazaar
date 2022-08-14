@@ -8,7 +8,7 @@ export const SSigning = () => {
     const emailRef = useRef();
     const passwordRef = useRef();
 
-    const handleSubmit = async (e) =>{
+    const handleAdd = async (e) =>{
         try{
             e.preventDefault();
             await axios.post(`http://localhost:8080/auth/create`, {
@@ -43,9 +43,10 @@ export const SSigning = () => {
                 </div>
             </div>
             <div>
-                <button className="btn btn-primary active button1" type="button" onClick={handleSubmit}>Submit</button>
-                <a href="/" className="btn btn-primary btn-lg active m-5 p-5" role="button" aria-pressed="true" style={{fontSize: "40px"}} onClick = {handleSubmit}>Confirm</a>
-                <a href="/" className="btn btn-primary btn-lg active m-5 p-5" role="button" aria-pressed="true" style={{fontSize: "40px"}} onClick = {handleSubmit}>Confirm</a>
+                {/* <button className="btn btn-primary active button1" type="button" onClick={handleSubmit}>Submit</button>
+                <a href="/" className="btn btn-primary btn-lg active m-5 p-5" role="button" aria-pressed="true" style={{fontSize: "40px"}} onClick = {handleSubmit}>Confirm</a> */}
+                
+                <a href="/" className="btn btn-basic m-5 px-5 py-5 signTwo" role="button" aria-pressed="true" style={{fontSize: "40px"}} onClick = {handleAdd}>Confirm</a>
             </div>
         </div>
         </div>

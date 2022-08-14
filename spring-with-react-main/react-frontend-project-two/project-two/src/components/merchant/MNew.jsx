@@ -65,7 +65,7 @@ export const MNew = () => {
                 <div>
                     <textarea className="bg-light bigtextbox" placeholder="description" aria-label="description" id="description" ref={descriptionRef} required></textarea>
                     {/* <input type= "textarea" className="bg-light bigtextbox" placeholder="Description" aria-label="description" /> */}
-                    <button className="btn btn-primary active merchantaddsubmit" type="button" onClick={handleSubmit}>Submit</button>
+                    <button className="btn btn-default merchantaddsubmit signTwo" type="button" onClick={handleSubmit}>Submit</button>
 
                 </div>
 
