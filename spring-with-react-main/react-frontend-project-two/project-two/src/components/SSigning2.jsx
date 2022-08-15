@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useRef } from 'react';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 export const SSigning2 = () => {
     
@@ -18,16 +19,22 @@ export const SSigning2 = () => {
                 id = response.data.id;
                 console.log("Access Token: " + response.data.accessToken);
                 token = response.data.accessToken;
-            });
-
-            firstRef.current.value = null;
-            passwordRef.current.value = null;
+                
             localStorage.setItem("token", token);
             localStorage.setItem("id", id);
-
+            });
+            
+            firstRef.current.value = null;
+            passwordRef.current.value = null;
+            // if(!id){
+            //     console.log("baddddd")
+                
+            // }
+            
         }catch(err){
             console.log(err); 
         }
+        e.preventDefault();
     }
     return(
         <>

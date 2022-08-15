@@ -1,4 +1,8 @@
 export const HNavigate = () => {
+
+    console.log(localStorage.getItem("id"))
+    console.log(localStorage.getItem("token"))
+
     var temp;
     console.log(localStorage.getItem("id"))
     if (localStorage.getItem("id")){
@@ -7,7 +11,7 @@ export const HNavigate = () => {
     else{
         temp = "disabled btn btn-default m-5 py-3 px-5 signOne"
     }
-    const handleLogout = ()=>{localStorage.removeItem("id")};
+    const handleLogout = ()=>{localStorage.clear()};
     return(
         <>
         <div class="text-center pt-2 pb-5">
