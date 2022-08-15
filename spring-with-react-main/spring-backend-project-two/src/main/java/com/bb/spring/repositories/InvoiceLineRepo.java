@@ -22,7 +22,7 @@ public interface InvoiceLineRepo extends JpaRepository<InvoiceLines, Integer>{
 	@Query("delete from InvoiceLines inv where inv.userList.id = ?1")
 	public void deleteByUserId(int realuserid);
 	
-	@Query("FROM InvoiceLines WHERE userList.id = ?1 AND gameList.gameid = ?2") // JPQL
+	@Query("FROM InvoiceLines WHERE userList.id = ?1 AND gameList.gameid = ?2")
 	public List<InvoiceLines> getByUserAndGame(int id, int gameid);
 	
 }
