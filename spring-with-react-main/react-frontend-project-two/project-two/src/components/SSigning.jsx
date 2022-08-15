@@ -10,7 +10,6 @@ export const SSigning = () => {
 
     const handleAdd = async (e) =>{
         try{
-            e.preventDefault();
             await axios.post(`http://localhost:8080/auth/create`, {
                 "first_name": firstRef.current.value,
                 "last_name": lastRef.current.value,

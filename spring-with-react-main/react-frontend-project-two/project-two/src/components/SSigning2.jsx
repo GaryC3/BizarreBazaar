@@ -10,7 +10,6 @@ export const SSigning2 = () => {
 
     const handleSubmit = async (e) =>{
         try{
-            e.preventDefault();
             await axios.post(`http://localhost:8080/auth/login`, {
                 email: firstRef.current.value,
                 password: passwordRef.current.value
