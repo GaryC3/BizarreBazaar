@@ -47,7 +47,7 @@ public class AuthController {
 					new UsernamePasswordAuthenticationToken(request.getEmail(), request.getPassword()));
 			UserList user = (UserList) authentication.getPrincipal();
 			String accessToken = jwtUtil.generateAccessToken(user);
-			AuthResponse response = new AuthResponse(user.getEmail(), user.getId(), accessToken);
+			AuthResponse response = new AuthResponse(user.getEmail(), user.getId(), user.getAdmin(), accessToken);
 			System.out.println(accessToken);
 			return ResponseEntity.ok()
 					.header(HttpHeaders.ACCESS_CONTROL_EXPOSE_HEADERS, "Authorization" + accessToken)

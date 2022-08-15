@@ -42,6 +42,9 @@ public class UserList implements UserDetails {
 	@Column(name="password")
 	private String password;
 	
+	@Column(name="admin")
+	private String admin;
+	
 	@OneToMany(mappedBy = "userList")
 	@JsonIgnore
 	private Set<InvoiceLines> invoiceLines;
@@ -123,10 +126,18 @@ public class UserList implements UserDetails {
 		this.invoice = invoice;
 	}
 
+	public String getAdmin() {
+		return admin;
+	}
+
+	public void setAdmin(String admin) {
+		this.admin = admin;
+	}
+
 	@Override
 	public String toString() {
 		return "UserList [id=" + id + ", first_name=" + first_name + ", last_name=" + last_name + ", email=" + email
-				+ ", password=" + password + ", invoiceLines=" + invoiceLines + ", invoice=" + invoice + "]";
+				+ ", password=" + password + ", invoiceLines=" + invoiceLines + ", invoice=" + invoice + ", admin=" + admin + "]";
 	}
 
 	@Override

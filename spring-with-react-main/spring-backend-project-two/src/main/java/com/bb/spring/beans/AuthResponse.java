@@ -5,14 +5,16 @@ public class AuthResponse {
 	private String email;
 	private int id;
 	private String accessToken;
+	private String admin;
 	
 	public AuthResponse() {
 	}
 
-	public AuthResponse(String email, int id, String accessToken) {
+	public AuthResponse(String email, int id, String admin, String accessToken) {
 		super();
 		this.email = email;
 		this.id = id;
+		this.admin = admin;
 		this.accessToken = accessToken;
 	}
 
@@ -39,6 +41,16 @@ public class AuthResponse {
 	public void setAccessToken(String accessToken) {
 		this.accessToken = accessToken;
 	}
+
+	public String getAdmin() {
+		return admin;
+	}
+
+	public void setAdmin(String admin) {
+		this.admin = admin;
+	}
+	
+	
 
 	
 }

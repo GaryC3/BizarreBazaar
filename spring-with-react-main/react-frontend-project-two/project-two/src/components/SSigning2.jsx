@@ -8,10 +8,11 @@ export const SSigning2 = () => {
     const passwordRef = useRef();
     var token
     var id
+    var admin
 
     const handleSubmit = async (e) =>{
+        e.preventDefault();
         try{
-            e.preventDefault();
             await axios.post(`http://localhost:8080/auth/login`, {
                 email: firstRef.current.value,
                 password: passwordRef.current.value
@@ -20,22 +21,21 @@ export const SSigning2 = () => {
                 id = response.data.id;
                 console.log("Access Token: " + response.data.accessToken);
                 token = response.data.accessToken;
+                console.log("admin: " + response.data.admin);
+                admin = response.data.admin;
+
                 
             localStorage.setItem("token", token);
             localStorage.setItem("id", id);
+            localStorage.setItem("admin", admin);
             });
             
             firstRef.current.value = null;
             passwordRef.current.value = null;
-            // if(!id){
-            //     console.log("baddddd")
-                
-            // }
             
         }catch(err){
             console.log(err); 
         }
-        e.preventDefault();
     }
     return(
         <>
