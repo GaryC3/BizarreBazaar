@@ -5,7 +5,7 @@ export const Confirmation = () => {
         <>
         <div className = "conBackground">
         <back.Back/>
-        <h1 className="text-center title">CART</h1>
+        <div className="title cartImg"></div>
         <cart.CGames/>
         </div>
         </>

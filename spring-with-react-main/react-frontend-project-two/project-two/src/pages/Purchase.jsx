@@ -5,7 +5,7 @@ export const Purchase = () => {
         <>
         <div className="browseBackground">
         <back.Back/>
-        <h1 className="text-center title">GAMES</h1>
+        <div className="title purchaseSign"></div>
         <buy.PGames/>
         <buy.PPurchase/>
         </div>

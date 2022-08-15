@@ -55,7 +55,7 @@ export const MDiscount = () => {
             <input type="text" className="form-control bg-light long2" placeholder="Genre" aria-label="genre" ref={genreRef} required="required"  />
             
             <input type="number" className="form-control bg-ligh long2" placeholder="Discount" ara-label="discount" required="required" ref={discountRef}/>
-            <button className="btn btn-default merchantdiscount  long2 signTwo" type="button" onClick={handleSubmit}>Submit</button>
+            <button className="btn btn-default merchantdiscount  long2 signTwo" type="button" style={{fontSize:"40", fontFamily:"serif"}} onClick={handleSubmit}>Update</button>
         </form>
         
         </>   

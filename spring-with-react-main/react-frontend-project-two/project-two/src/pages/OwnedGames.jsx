@@ -5,7 +5,7 @@ export const OwnedGames = () => {
         <>
         <div className="ownedBackground">
         <back.Back/>
-        <h1 className="text-center title">Game Library</h1>
+        <div className="title myGames"></div>
         <own.OGames />
         </div>
         </> 

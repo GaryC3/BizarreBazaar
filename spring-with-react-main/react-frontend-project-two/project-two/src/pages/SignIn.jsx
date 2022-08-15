@@ -6,7 +6,7 @@ export const SignIn = () => {
 
         <div className="signinBackground">
         <back.Back/>
-        <h1 className=" title ">Sign-in</h1>
+        <div className="title signIn"></div>
         <sign2.SSigning2 />
         </div>
         </>

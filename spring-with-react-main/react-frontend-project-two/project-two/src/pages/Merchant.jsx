@@ -5,11 +5,11 @@ export const Merchant = () => {
         <>
         <back.Back/>
         <div className="manageBackground">
-            <h1 className="text-center title">Add New Game</h1>
+        <div className="title addGameImg"></div>
             <admin.MNew />
-            <h1 className="text-center title">Remove Game</h1>
+            <div className="title deleteGameImg"></div>
             <admin.MDelete />
-            <h1 className="text-center title">Update Discounts</h1>
+            <div className="title discountImg"></div>
             <admin.MDiscount />
         </div>  
         

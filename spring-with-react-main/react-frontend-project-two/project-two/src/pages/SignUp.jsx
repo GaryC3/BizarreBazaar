@@ -5,7 +5,7 @@ export const SignUp = () => {
         <>
         <div className="createBackground">
         <back.Back/>
-        <h1 className=" title ">Sign-up</h1>
+        <div className="title signUp"></div>
         <sign.SSigning />
         </div>
         </>

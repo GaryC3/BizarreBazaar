@@ -44,7 +44,7 @@ export const MNew = () => {
 
     return(
         <>
-        <div className="merchantScroll">
+        
         <div className="input-group mb-3 long centeredSelGame">
             <input type="text" className="form-control bg-light" placeholder="Title" aria-label="title" id="title" ref={titleRef} required  />
             {/* <input type="text" className="form-control bg-light" placeholder="Genre" aria-label="genre" id="genre" ref={genreRef} required /> */}
@@ -65,11 +65,10 @@ export const MNew = () => {
                 <div>
                     <textarea className="bg-light bigtextbox" placeholder="description" aria-label="description" id="description" ref={descriptionRef} required></textarea>
                     {/* <input type= "textarea" className="bg-light bigtextbox" placeholder="Description" aria-label="description" /> */}
-                    <button className="btn btn-default merchantaddsubmit signTwo" type="button" onClick={handleSubmit}>Submit</button>
+                    <button className="btn btn-default merchantaddsubmit signTwo" style={{fontSize:"40", fontFamily:"serif"}} onClick={handleSubmit}>Add Game</button>
 
                 </div>
 
-        </div>
         </div>
 
         </>

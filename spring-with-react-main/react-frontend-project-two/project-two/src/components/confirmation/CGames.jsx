@@ -69,7 +69,7 @@ export const CGames = () => {
                 <div className="space-up">
                     Total : ${ Math.floor((total)*100)/100}
                 </div>
-                <a href="/" className="btn btn-basic m-3 px-6 py-4 signTwo" role="button" aria-pressed="true" style={{fontSize: "40px"}} onClick = {handleAdd}>Confirm</a>
+                <a href="/" className="btn btn-basic m-3 px-6 py-4 signTwo" role="button" aria-pressed="true" style={{fontSize: "40px", fontFamily:"serif"}} onClick = {handleAdd}>Confirm</a>
             </div>
         </> 
     );

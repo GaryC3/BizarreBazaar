@@ -45,7 +45,7 @@ export const MDelete = () => {
             
         </div>
         <div className= "input-group mb-3 long3 centeredSelGame">
-            <button className="btn btn-danger button1 signTwo" type="button" onClick={handleDelete}>Delete</button>
+            <button className="btn btn-default button1 signTwo" type="button" style={{fontSize:"40", fontFamily:"serif"}}onClick={handleDelete}>Delete</button>
 
             {/* <button className="btn btn-primary active button1" type="button" onClick={handleUpdate}>Update</button> */}
         </div>    
