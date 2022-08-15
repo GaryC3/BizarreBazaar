@@ -76,8 +76,9 @@ code {
 }
 .browseBackground{
   background-image:url("../public/browse.png");
+  
   background-color: #cccccc; /* Used if the image is unavailable */
-  background-position: center; /* Center the image */
+   /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
   background-attachment: fixed;
@@ -94,7 +95,6 @@ code {
 .conBackground{
   background-image:url("../public/cart.png");
   background-color: #cccccc; /* Used if the image is unavailable */
-  height: 1080px;
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover;
@@ -221,15 +221,13 @@ code {
 .back {
   background-image: url("../public/back.png");
   position: absolute;
-  height: 10%;
-  width: 10%;
+  height: 9%;
+  width: 10.5%;
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; 
   margin-top: 42px;
   margin-left: 45px;
   z-index: 2;
-  border: #000000;
-  border-style: groove;
 }
 .sign {
   margin-left: 257px;

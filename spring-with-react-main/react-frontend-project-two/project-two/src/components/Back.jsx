@@ -1,7 +1,7 @@
 export const Back = () => {
     return(
         <div>
-            <a href="/" className="btn btn-default back" role="button" ></a>
+            <a href="/" className=" back"  ></a>
         </div>
     ); 
 }
