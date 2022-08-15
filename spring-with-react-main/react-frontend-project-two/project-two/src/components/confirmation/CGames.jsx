@@ -48,13 +48,13 @@ export const CGames = () => {
                         <div key ={game.gameList.gameid}>
                             <div>
                                 <div>
-                                <img className="gameSize" data-toggle="popover" title={game.gameList.description} data-bs-content={game.gameList.description} src={`${game.gameList.title}.png`} onError={(e)=>{e.target.onerror = null; e.target.src="placeholder.png"}}/>
+                                    <img className="gameSize" data-toggle="popover" title={game.gameList.description} data-bs-content={game.gameList.description} src={`${game.gameList.title}.png`} onError={(e)=>{e.target.onerror = null; e.target.src="placeholder.png"}}/>
                                     <div className="list-group">
-                                        <div className="text-center">Title :</div>
+                                        <div className="text-center list-group-item-dark" >Title :</div>
                                         <div className=" list-group-item-action list-group-item-secondary text-center">{game.gameList.title}</div>
                                     </div>
                                     <div className="list-group">
-                                        <div className="text-center">Price :</div>
+                                        <div className="text-center list-group-item-dark">Price :</div>
                                         <div className=" list-group-item-action list-group-item-secondary text-center">${Math.ceil((game.gameList.price-game.gameList.price*game.gameList.discount.discount)*100)/100}</div>
                                     </div>
                                 </div>
