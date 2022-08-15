@@ -20,14 +20,8 @@ export const PGames = () => {
             console.log(Header);
             
             axios.get(`http://localhost:8080/gameList/${localStorage.getItem("id")}`, Header).then(res => {setGames(res.data)}) 
-            axios.delete(`http://localhost:8080/invoicelines/${localStorage.getItem("id")}`)////////////////////////////////
-            /////////////////////////////////////////////////^////////
-            ////////////////////////////////////////////////^^^///////
-            ///////////////////Fix when id available///////^^^^^//////
-            //////////////////////////////////////////////^^^^^^^/////
-            /////////////////////////////////////////////^^^^^^^^^////
-            ////////////////////////////////////////////^^^^^^^^^^^///
-            ///////////////////////////////////////////^^^^^^^^^^^^^//
+            axios.delete(`http://localhost:8080/invoicelines/${localStorage.getItem("id")}`)
+           
         }, []); 
 
         const handleAdd = async (e) =>{
