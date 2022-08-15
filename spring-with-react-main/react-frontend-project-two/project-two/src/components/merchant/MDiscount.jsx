@@ -57,7 +57,7 @@ export const MDiscount = () => {
         <form className="form-inline input-group mb-3 centeredDiscount ">
             <input type="text" required="required" className="form-control bg-light long2" placeholder="Genre" aria-label="genre" ref={genreRef}/>
             
-            <input type="number" step="0.01" min="0" max="1"  required="required" className="form-control bg-ligh long2" placeholder="Discount" ara-label="discount"ref={discountRef}/>
+            <input type="number" step="0.01" min="0" max="1"  required="required" className="form-control bg-ligh long2" placeholder="0.00" ara-label="discount"ref={discountRef}/>
             <button className="btn btn-default merchantdiscount  long2 signTwo" type="button" style={{fontSize:"40", fontFamily:"serif"}} onClick={handleSubmit}>Update</button>
         </form>
         
