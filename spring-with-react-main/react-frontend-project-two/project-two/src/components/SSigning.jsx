@@ -10,7 +10,6 @@ export const SSigning = () => {
 
     const handleAdd = async (e) =>{
         try{
-            e.preventDefault();
             await axios.post(`http://localhost:8080/auth/create`, {
                 "first_name": firstRef.current.value,
                 "last_name": lastRef.current.value,
@@ -46,7 +45,7 @@ export const SSigning = () => {
                 {/* <button className="btn btn-primary active button1" type="button" onClick={handleSubmit}>Submit</button>
                 <a href="/" className="btn btn-primary btn-lg active m-5 p-5" role="button" aria-pressed="true" style={{fontSize: "40px"}} onClick = {handleSubmit}>Confirm</a> */}
                 
-                <a href="/" className="btn btn-basic m-5 px-5 py-5 signTwo" role="button" aria-pressed="true" style={{fontSize: "40px", fontFamily:"serif"}} onClick = {handleAdd}>Sign Up</a>
+                <a href="/" className="btn btn-basic m-5 px-5 py-4 signTwo" role="button" aria-pressed="true" style={{fontSize: "40px", fontFamily:"serif"}} onClick = {handleAdd}>Sign Up</a>
             </div>
         </div>
         </div>
