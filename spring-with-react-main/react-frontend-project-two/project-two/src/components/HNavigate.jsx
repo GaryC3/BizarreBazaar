@@ -3,15 +3,15 @@ export const HNavigate = () => {
     console.log(localStorage.getItem("id"))
     console.log(localStorage.getItem("token"))
 
-    var userPermission = "disabled btn btn-default m-5 py-3 px-5 signOne";
-    var adminPermission = "disabled btn btn-default m-5 py-3 px-5 signOne";
+    var userPermission = "disabled btn btn-default m-5 py-4 px-5 signOne";
+    var adminPermission = "disabled btn btn-default m-5 py-4 px-5 signOne";
     console.log(localStorage.getItem("id"))
     if (localStorage.getItem("id")){
-        userPermission = "btn btn-default m-5 py-3 px-5 signOne"
+        userPermission = "btn btn-default m-5 py-4 px-5 signOne"
     }
     if (localStorage.getItem("admin") == "admin"){
         console.log("aadadadad")
-        adminPermission = "btn btn-default m-5 py-3 px-5 signOne"
+        adminPermission = "btn btn-default m-5 py-4 px-5 signOne"
     }
     console.log(localStorage.getItem("admin"))
     console.log(adminPermission)
@@ -20,8 +20,8 @@ export const HNavigate = () => {
     return(
         <>
         <div class="text-center pt-2 pb-5">
-            <a href="/sign" class="btn btn-default m-5 py-3 px-5 signOne" role="button" aria-pressed="true" style={{fontSize: "40px", fontFamily:"serif"} }>Create</a>
-            <a href="/sign2" class="btn btn-default m-5 py-3 px-5 signOne" role="button" aria-pressed="true" style={{fontSize: "40px", fontFamily:"serif"}}>Sign-In</a>
+            <a href="/sign" class="btn btn-default m-5 py-4 px-5 signOne" role="button" aria-pressed="true" style={{fontSize: "40px", fontFamily:"serif"} }>Create</a>
+            <a href="/sign2" class="btn btn-default m-5 py-4 px-5 signOne" role="button" aria-pressed="true" style={{fontSize: "40px", fontFamily:"serif"}}>Sign-In</a>
         </div>
         <div class="text-center pb-5">
             <a href="/purchase" class={userPermission} role="button" aria-pressed="true" style={{fontSize: "40px", fontFamily:"serif"}}>Browse</a>
