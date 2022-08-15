@@ -42,7 +42,7 @@ export const SSigning2 = () => {
         <div className="signinButtonCenter">
             <div className = "">
                 {/* <a href="/" className="btn btn-primary active button1" role="button" area-pressed="true" onClick={handleSubmit}>Submit</a> */}
-                <a href="/" className="btn m-4 px-6 py-4 signTwo" role="button" aria-pressed="true" style={{fontSize: "40px", fontFamily:"serif"}} onClick = {handleSubmit}>Sign In</a>
+                <a href="/" className="btn m-4 px-5 py-4 signTwo" role="button" aria-pressed="true" style={{fontSize: "40px", fontFamily:"serif"}} onClick = {handleSubmit}>Sign In</a>
             </div>
         </div>
         
