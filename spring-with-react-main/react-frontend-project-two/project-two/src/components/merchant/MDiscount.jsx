@@ -34,11 +34,15 @@ export const MDiscount = () => {
     
     return(
         <>
-        <table >
+        <div clasNAme=" table table-wrapper-scroll-y my-custom-scrollbar">
+        <table className="table table-striped table-light table-sm" >
+            <thead className>
             <tr>
                 <th>Genre</th>
                 <th>Discount</th>
             </tr>
+            </thead>
+            <tbody>
             {discountdata.map((discount, i, e) =>{
                     return(
                         <tr key={discount.genre}>
@@ -48,8 +52,9 @@ export const MDiscount = () => {
                     )
                 }
                 )}
-
+            </tbody>
         </table>
+        </div>
         {/* </ReactBootStrap.Table> */}
         <form className="form-inline input-group mb-3 centeredDiscount ">
             <input type="text" className="form-control bg-light long2" placeholder="Genre" aria-label="genre" ref={genreRef} required="required"  />
