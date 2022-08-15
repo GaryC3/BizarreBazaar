@@ -9,7 +9,7 @@ export const HNavigate = () => {
     if (localStorage.getItem("id")){
         userPermission = "btn btn-default m-5 py-3 px-5 signOne"
     }
-    if (localStorage.getItem("admin") != "null"){
+    if (localStorage.getItem("admin") == "admin"){
         console.log("aadadadad")
         adminPermission = "btn btn-default m-5 py-3 px-5 signOne"
     }
