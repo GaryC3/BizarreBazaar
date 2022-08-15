@@ -18,36 +18,35 @@ export const MDiscount = () => {
        
 
     const handleSubmit = async (e) =>{
+        
         try{
-            const {data} = await axios.post(`http://localhost:8080/discount`, {
-                genre: genreRef.current.value,
-                discount: discountRef.current.value
-                
-            });
-            window.location.reload(false);
-            //setDiscount([discountdata, data]);
-            // setDiscount([...discountdata, data]);
-        }catch(err){
-            console.log(err); 
-        }
-    };
+        const {data} = await axios.post(`http://localhost:8080/discount`, {
+            genre: genreRef.current.value,
+            discount: discountRef.current.value
+            
+        });
+        window.location.reload(false);
+        //setDiscount([discountdata, data]);
+        // setDiscount([...discountdata, data]);
+        }catch(err){ consolelog(err)}
+        };
     
     return(
         <>
-        <div clasNAme=" table table-wrapper-scroll-y my-custom-scrollbar">
+        <div className="tableContainer table-wrapper-scroll-y my-custom-scrollbar">
         <table className="table table-striped table-light table-sm" >
             <thead className>
             <tr>
-                <th>Genre</th>
-                <th>Discount</th>
+                <th scope="col">Genre</th>
+                <th scope="col">Discount</th>
             </tr>
             </thead>
             <tbody>
             {discountdata.map((discount, i, e) =>{
                     return(
                         <tr key={discount.genre}>
-                            <td>{discount.genre}</td>
-                            <td>{discount.discount}</td>
+                            <td scope="row">{discount.genre}</td>
+                            <td scope="row">{discount.discount}</td>
                         </tr>
                     )
                 }
@@ -55,16 +54,13 @@ export const MDiscount = () => {
             </tbody>
         </table>
         </div>
-        {/* </ReactBootStrap.Table> */}
         <form className="form-inline input-group mb-3 centeredDiscount ">
-            <input type="text" className="form-control bg-light long2" placeholder="Genre" aria-label="genre" ref={genreRef} required="required"  />
+            <input type="text" required="required" className="form-control bg-light long2" placeholder="Genre" aria-label="genre" ref={genreRef}/>
             
-            <input type="number" className="form-control bg-ligh long2" placeholder="Discount" ara-label="discount" required="required" ref={discountRef}/>
+            <input type="number" step="0.01" min="0" max="1"  required="required" className="form-control bg-ligh long2" placeholder="Discount" ara-label="discount"ref={discountRef}/>
             <button className="btn btn-default merchantdiscount  long2 signTwo" type="button" style={{fontSize:"40", fontFamily:"serif"}} onClick={handleSubmit}>Update</button>
         </form>
         
         </>   
-        
-        
     );
 }

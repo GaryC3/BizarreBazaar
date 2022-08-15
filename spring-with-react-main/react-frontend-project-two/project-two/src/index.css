@@ -24,6 +24,11 @@ code {
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover;
 }
+.tableContainer{
+  position: fixed;
+  margin: auto;
+  width: 50%
+}
 .signTwo{
   background-image:url("../public/sign2.png");
   background-color: transparent; /* Used if the image is unavailable */
@@ -31,6 +36,14 @@ code {
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover;
 }
+.my-custom-scrollbar {
+  position: relative;
+  height: 200px;
+  overflow: auto;
+  }
+.table-wrapper-scroll-y {
+  display: list-item;
+  }
 .titleImg{
   background-image:url("../public/title.png");
   background-color: transparent; /* Used if the image is unavailable */
